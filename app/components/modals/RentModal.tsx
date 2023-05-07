@@ -131,7 +131,7 @@ const RentModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes your place?"
+        title="Which of these best describes your entreprise?"
         subtitle="Pick a category"
       />
       <div 
@@ -163,7 +163,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Where is your place located?"
+          title="Where is your entreprise located?"
           subtitle="Help guests find you!"
         />
         <CountrySelect 
@@ -210,7 +210,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your place"
+          title="Add a photo of your entreprise"
           subtitle="Show guests what your place looks like!"
         />
         <ImageUpload
@@ -225,7 +225,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="How would you describe your place?"
+          title="How would you describe your entreprise?"
           subtitle="Short and sweet works best!"
         />
         <Input

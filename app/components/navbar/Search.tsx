@@ -82,7 +82,7 @@ const Search = () => {
         >
           {locationLabel}
         </div>
-        <div 
+        {/* <div 
           className="
             hidden 
             sm:block 
@@ -95,7 +95,7 @@ const Search = () => {
           "
         >
           {durationLabel}
-        </div>
+        </div> */}
         <div 
           className="
             text-sm 
@@ -108,7 +108,7 @@ const Search = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
+          {/* <div className="hidden sm:block">{guestLabel}</div> */}
           <div 
             className="
               p-2 
