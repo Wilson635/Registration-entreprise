@@ -40,24 +40,24 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
   const location = getByValue(data.locationValue);
 
-  const handleCancel = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
+  // const handleCancel = useCallback(
+  //   (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.stopPropagation();
 
-    if (disabled) {
-      return;
-    }
+  //   if (disabled) {
+  //     return;
+  //   }
 
-    onAction?.(actionId)
-  }, [disabled, onAction, actionId]);
+  //   onAction?.(actionId)
+  // }, [disabled, onAction, actionId]);
 
-  const price = useMemo(() => {
-    if (reservation) {
-      return reservation.totalPrice;
-    }
+  // const price = useMemo(() => {
+  //   if (reservation) {
+  //     return reservation.totalPrice;
+  //   }
 
-    return data.price;
-  }, [reservation, data.price]);
+  //   return data.price;
+  // }, [reservation, data.price]);
 
   const reservationDate = useMemo(() => {
     if (!reservation) {
@@ -110,6 +110,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
         </div>
         <div className="font-semibold text-lg">
           {location?.region}, {location?.label}
+        </div>
+        <div className="font-bold text-neutral-500">
+          {reservationDate || data.title}
         </div>
         <div className="font-light text-neutral-500">
           {reservationDate || data.category}
