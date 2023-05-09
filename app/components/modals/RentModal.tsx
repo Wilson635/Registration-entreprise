@@ -70,7 +70,7 @@ const RentModal = () => {
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
     ssr: false 
-  }), [location]);
+  }), []);
 
 
   const setCustomValue = (id: string, value: any) => {
@@ -210,7 +210,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your entreprise"
+          title="Add a photo or a logo of your entreprise"
           subtitle="Show guests what your place looks like!"
         />
         <ImageUpload
