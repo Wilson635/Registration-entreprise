@@ -1,7 +1,11 @@
 "use client"
+import useRentModal from '@/app/hooks/useRentModal'
+import useLoginModal from "@/app/hooks/useLoginModal"
+import { SafeUser } from "@/app/types"
 import { Popover, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment, useState, useCallback } from 'react'
 import { HiAdjustmentsHorizontal, HiOutlineChatBubbleOvalLeftEllipsis, HiOutlineIdentification, HiOutlineNewspaper, HiOutlineSignal } from "react-icons/hi2"
+import { Badge } from '@mui/material'
 
 const menu = [
   {
@@ -18,19 +22,43 @@ const menu = [
   },
   {
     name: 'Podcasts',
-    description: 'Keep track of your growth',
+    description: 'Découvrez toutes les dicussions du site',
     href: '##',
     icon: IconThree,
   },
   {
     name: 'Entreprises',
-    description: 'Keep track of your growth',
+    description: 'Parcourez la liste des différentes entreprises enrégistrées sur le site',
+    href: '##',
+    icon: IconFour,
+  },
+  {
+    name: 'Guide',
+    description: "Découvrez le code de conduite pour l'utilisation su site",
     href: '##',
     icon: IconFour,
   },
 ]
 
-export default function PopOverMenu() {
+interface PopOverMenuProps {
+    currentUser?: SafeUser | null
+}
+
+const PopOverMenu: React.FC<PopOverMenuProps> = ({
+    currentUser
+}) => {
+
+    const rentModal = useRentModal();
+    const loginModal = useLoginModal();
+
+    const onRent = useCallback(() => {
+        if (!currentUser) {
+          return loginModal.onOpen();
+        }
+    
+        rentModal.onOpen();
+      }, [loginModal, rentModal, currentUser]);
+
   return (
     <div className="top-16 w-full max-w-sm px-4">
       <Popover className="relative">
@@ -52,7 +80,7 @@ export default function PopOverMenu() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
+              <Popover.Panel className="absolute left-1/2 right-0 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                     <div className="relative grid gap-8 bg-white p-8 lg:grid-cols-2">
                         {menu.map((item) => (
@@ -66,7 +94,8 @@ export default function PopOverMenu() {
                                 </div>
                                 <div className="ml-4">
                                     <p className="text-xl font-medium text-gray-900">
-                                        {item.name}
+                                        {item.name} 
+                                        <Badge badgeContent="bientôt" color="success" className="ml-8 rounded-lg bg-indigo-100 text-indigo-500" />
                                     </p>
                                     <p className="text-sm text-gray-500">
                                         {item.description}
@@ -144,3 +173,6 @@ function IconFour() {
         </div>
     )
 }
+
+
+export default PopOverMenu;

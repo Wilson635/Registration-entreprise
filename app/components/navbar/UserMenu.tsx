@@ -100,7 +100,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             bg-white 
             overflow-hidden 
             right-0 
-            top-12 
+            top-14
             text-sm
           "
         >
