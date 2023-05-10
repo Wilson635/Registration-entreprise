@@ -1,10 +1,12 @@
 "use client"
+
+
 import useRentModal from '@/app/hooks/useRentModal'
 import useLoginModal from "@/app/hooks/useLoginModal"
 import { SafeUser } from "@/app/types"
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment, useState, useCallback } from 'react'
-import { HiAdjustmentsHorizontal, HiOutlineChatBubbleOvalLeftEllipsis, HiOutlineIdentification, HiOutlineNewspaper, HiOutlineSignal } from "react-icons/hi2"
+import { HiAdjustmentsHorizontal, HiOutlineChatBubbleOvalLeftEllipsis, HiOutlineBookOpen, HiOutlineIdentification, HiOutlineNewspaper, HiOutlineSignal } from "react-icons/hi2"
 import { Badge } from '@mui/material'
 
 const menu = [
@@ -36,7 +38,7 @@ const menu = [
     name: 'Guide',
     description: "Découvrez le code de conduite pour l'utilisation su site",
     href: '##',
-    icon: IconFour,
+    icon: IconFive,
   },
 ]
 
@@ -80,7 +82,7 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute left-1/2 right-0 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
+              <Popover.Panel className="absolute left-1/4 right-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 mr-8 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                     <div className="relative grid gap-8 bg-white p-8 lg:grid-cols-2">
                         {menu.map((item) => (
@@ -172,6 +174,22 @@ function IconFour() {
             <HiOutlineIdentification size={35} />
         </div>
     )
+}
+
+
+function IconFive() {
+  return (
+      <div 
+          className="
+              p-2 
+              bg-indigo-100 
+              rounded-md 
+              text-indigo-500 
+          "
+      >
+          <HiOutlineBookOpen size={35} />
+      </div>
+  )
 }
 
 
