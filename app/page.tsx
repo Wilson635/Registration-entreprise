@@ -9,7 +9,6 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
 import EntrepriseHead from "./components/entreprise/EntrepriseHead";
 import NewLetter from "./components/Newletter";
-import EntrepriseInfo from "./components/entreprise/EntrepriseInfo";
 
 interface HomeProps {
   searchParams: IListingsParams
@@ -52,7 +51,6 @@ const Home = async ({ searchParams }: HomeProps) => {
             />
           ))}
         </div>
-        <EntrepriseInfo />
       </Container>
       <NewLetter />
     </ClientOnly>
