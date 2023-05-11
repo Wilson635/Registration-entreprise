@@ -32,7 +32,7 @@ const Home = async ({ searchParams }: HomeProps) => {
     <ClientOnly>
       <EntrepriseHead  />
       <Container>
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-5">
           <FaSlackHash className="text-indigo-500 text-3xl"/>
           <Heading
             title="Entreprises"
@@ -41,7 +41,7 @@ const Home = async ({ searchParams }: HomeProps) => {
         </div>
         <div 
           className="
-            pt-
+            pt-5
             grid 
             grid-cols-1 
             sm:grid-cols-2 
