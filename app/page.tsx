@@ -9,6 +9,8 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
 import EntrepriseHead from "./components/entreprise/EntrepriseHead";
 import NewLetter from "./components/Newletter";
+import Heading from "./components/Heading";
+import { FaSlackHash } from "react-icons/fa";
 
 interface HomeProps {
   searchParams: IListingsParams
@@ -30,9 +32,16 @@ const Home = async ({ searchParams }: HomeProps) => {
     <ClientOnly>
       <EntrepriseHead  />
       <Container>
+        <div className="flex gap-3">
+          <FaSlackHash className="text-indigo-500 text-3xl"/>
+          <Heading
+            title="Entreprises"
+            subtitle="List of entreprises!"
+          />
+        </div>
         <div 
           className="
-            pt-24
+            pt-
             grid 
             grid-cols-1 
             sm:grid-cols-2 
