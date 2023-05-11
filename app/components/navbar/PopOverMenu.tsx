@@ -6,7 +6,7 @@ import useLoginModal from "@/app/hooks/useLoginModal"
 import { SafeUser } from "@/app/types"
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment, useState, useCallback } from 'react'
-import { HiAdjustmentsHorizontal, HiOutlineChatBubbleOvalLeftEllipsis, HiOutlineBookOpen, HiOutlineIdentification, HiOutlineNewspaper, HiOutlineSignal } from "react-icons/hi2"
+import { HiAdjustmentsHorizontal, HiPhone, HiVideoCamera, HiOutlineChatBubbleOvalLeftEllipsis, HiBookOpen, HiOutlineIdentification, HiOutlineNewspaper, HiOutlineSignal } from "react-icons/hi2"
 import { Badge } from '@mui/material'
 
 const menu = [
@@ -34,12 +34,11 @@ const menu = [
     href: '##',
     icon: IconFour,
   },
-  {
-    name: 'Guide',
-    description: "Découvrez le code de conduite pour l'utilisation su site",
-    href: '##',
-    icon: IconFive,
-  },
+]
+
+const callsToAction = [
+  { name: 'Guide', href: '#', icon: HiBookOpen },
+  { name: 'Contact sales', href: '#', icon: HiPhone },
 ]
 
 interface PopOverMenuProps {
@@ -82,7 +81,7 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute left-1/4 right-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 mr-8 lg:max-w-3xl">
+              <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4 max-sm:w-full max-sm:mx-aut sm:-26 mr-8 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                     <div className="relative grid gap-8 bg-white p-8 lg:grid-cols-2">
                         {menu.map((item) => (
@@ -97,7 +96,6 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
                                 <div className="ml-4">
                                     <p className="text-xl font-medium text-gray-900">
                                         {item.name} 
-                                        <Badge badgeContent="bientôt" color="success" className="ml-8 rounded-lg bg-indigo-100 text-indigo-500" />
                                     </p>
                                     <p className="text-sm text-gray-500">
                                         {item.description}
@@ -105,6 +103,18 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
                                 </div>
                             </a>
                         ))}
+                    </div>
+                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                      {callsToAction.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
+                        >
+                          <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                          {item.name}
+                        </a>
+                      ))}
                     </div>
                 </div>
               </Popover.Panel>
@@ -177,20 +187,6 @@ function IconFour() {
 }
 
 
-function IconFive() {
-  return (
-      <div 
-          className="
-              p-2 
-              bg-indigo-100 
-              rounded-md 
-              text-indigo-500 
-          "
-      >
-          <HiOutlineBookOpen size={35} />
-      </div>
-  )
-}
 
 
 export default PopOverMenu;
