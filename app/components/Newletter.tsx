@@ -37,9 +37,9 @@ export default function NewLetter() {
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <HiCalendarDays className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
-              <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
+              <dt className="mt-4 font-semibold text-white">Articles Hebdomadaires</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.
+                Recevez chaque semaine des articles et actualités sur les entreprises du monde
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -48,7 +48,7 @@ export default function NewLetter() {
               </div>
               <dt className="mt-4 font-semibold text-white">No spam</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.
+                Naviguez sans aucunes traintes de publicités ou de spam sur notre site.
               </dd>
             </div>
           </dl>
