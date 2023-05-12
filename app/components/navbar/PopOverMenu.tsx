@@ -13,32 +13,32 @@ const menu = [
   {
     name: 'Discussion',
     description: 'Measure actions your users take',
-    href: '##',
+    href: '/discussions',
     icon: IconOne,
   },
   {
     name: 'Articles',
     description: 'Create your own targeted content',
-    href: '##',
+    href: '/articles',
     icon: IconTwo,
   },
   {
     name: 'Podcasts',
     description: 'Découvrez toutes les dicussions du site',
-    href: '##',
+    href: '/podcasts',
     icon: IconThree,
   },
   {
     name: 'Entreprises',
     description: 'Parcourez la liste des différentes entreprises enrégistrées sur le site',
-    href: '##',
+    href: '/entreprise',
     icon: IconFour,
   },
 ]
 
 const callsToAction = [
-  { name: 'Guide', href: '#', icon: HiBookOpen },
-  { name: 'Contact sales', href: '#', icon: HiPhone },
+  { name: 'Guide', href: '/notreguide', icon: HiBookOpen },
+  { name: 'Contact sales', href: '/contact-us', icon: HiPhone },
 ]
 
 interface PopOverMenuProps {
@@ -81,8 +81,8 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen sm:mx-auto max-sm:-left-28 -translate-x-1/2 px-4  mr-8 lg:max-w-3xl">
-                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+              <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen sm:mx-auto max-sm:-left-28 max-md:-left-28 -translate-x-1/2 px-4  mr-8 lg:max-w-3xl">
+                <div className="overflow-hidden rounded-br-lg rounded-bl-lg shadow-lg ring-1 ring-black ring-opacity-5">
                     <div className="relative grid gap-8 bg-white p-8 lg:grid-cols-2">
                         {menu.map((item) => (
                             <a
