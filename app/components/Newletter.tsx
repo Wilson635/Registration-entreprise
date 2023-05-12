@@ -7,10 +7,9 @@ export default function NewLetter() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our newsletter.</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Rejoignez notre newsletter.</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
-              dolore.
+              Rejoignez notre newsletter recevez des articles et podcasts sur les entreprises et leurs services.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
