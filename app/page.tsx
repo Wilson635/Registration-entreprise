@@ -7,7 +7,6 @@ import getListings, {
 } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
-import EntrepriseHead from "./components/entreprise/EntrepriseHead";
 import NewLetter from "./components/Newletter";
 import Heading from "./components/Heading";
 import { FaSlackHash } from "react-icons/fa";
@@ -30,7 +29,6 @@ const Home = async ({ searchParams }: HomeProps) => {
 
   return (
     <ClientOnly>
-      <EntrepriseHead  />
       <Container>
         <div className="flex gap-3 mt-5">
           <FaSlackHash className="text-indigo-500 text-3xl"/>

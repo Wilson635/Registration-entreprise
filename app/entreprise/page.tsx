@@ -1,10 +1,12 @@
 "use client"
 
+import EntrepriseHead from "../components/entreprise/EntrepriseHead";
+
 const Entreprise = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <EntrepriseHead />
+        </>
     );
 }
 
