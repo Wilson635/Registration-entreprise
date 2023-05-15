@@ -6,6 +6,8 @@ export interface IListingsParams {
   endDate?: string;
   locationValue?: string;
   category?: string;
+  souscategory?: string;
+  price?: string;
 }
 
 export default async function getListings(
@@ -18,6 +20,8 @@ export default async function getListings(
       startDate,
       endDate,
       category,
+      souscategory,
+      price,
     } = params;
 
     let query: any = {};
@@ -28,6 +32,14 @@ export default async function getListings(
 
     if (category) {
       query.category = category;
+    }
+
+    if (souscategory) {
+      query.souscategory = souscategory;
+    }
+
+    if (price) {
+      query.price = price;
     }
 
     if (locationValue) {
@@ -60,7 +72,7 @@ export default async function getListings(
       }
     });
 
-    const safeListings = listings.map((listing) => ({
+    const safeListings = listings.map((listing: { createdAt: { toISOString: () => any; }; }) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
     }));

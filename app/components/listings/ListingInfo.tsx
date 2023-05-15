@@ -16,25 +16,23 @@ const Map = dynamic(() => import('../Map'), {
 interface ListingInfoProps {
   user: SafeUser,
   description: string;
-  guestCount: number;
-  roomCount: number;
-  bathroomCount: number;
   category: {
     icon: IconType,
     label: string;
     description: string;
   } | undefined
   locationValue: string;
+  souscategory: string;
+  price: string;
 }
 
 const ListingInfo: React.FC<ListingInfoProps> = ({
   user,
   description,
-  guestCount,
-  roomCount,
-  bathroomCount,
+  souscategory,
   category,
   locationValue,
+  price,
 }) => {
   const { getByValue } = useCountries();
 
@@ -56,7 +54,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           <div>Hosted by {user?.name}</div>
           <Avatar src={user?.image} />
         </div>
-        {/* <div className="
+        <div className="
             flex 
             flex-row 
             items-center 
@@ -66,15 +64,9 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           "
         >
           <div>
-            {guestCount} guests
+            {price} 
           </div>
-          <div>
-            {roomCount} rooms
-          </div>
-          <div>
-            {bathroomCount} bathrooms
-          </div>
-        </div> */}
+        </div>
       </div>
       <hr />
       {category && (
@@ -84,6 +76,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           description={category?.description} 
         />
       )}
+      {souscategory}
       <hr />
       <div className="
       text-lg font-light text-neutral-500">
