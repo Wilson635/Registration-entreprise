@@ -1,6 +1,6 @@
 "use client"
 
-const Entreprise = () => {
+const Guide = () => {
     return (
         <div>
             Enter
@@ -8,4 +8,4 @@ const Entreprise = () => {
     );
 }
 
-export default Entreprise;
+export default Guide;

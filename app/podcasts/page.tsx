@@ -1,6 +1,7 @@
 "use client"
 
-const Entreprise = () => {
+
+const Podcast = () => {
     return (
         <div>
             Enter
@@ -8,4 +9,4 @@ const Entreprise = () => {
     );
 }
 
-export default Entreprise;
+export default Podcast;
