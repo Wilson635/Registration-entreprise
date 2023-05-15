@@ -51,11 +51,9 @@ const RentModal = () => {
     defaultValues: {
       category: '',
       location: null,
-      guestCount: 1,
-      roomCount: 1,
-      bathroomCount: 1,
+      souscategory: '',
       imageSrc: '',
-      price: 1,
+      price: '',
       title: '',
       description: '',
     }
@@ -63,9 +61,7 @@ const RentModal = () => {
 
   const location = watch('location');
   const category = watch('category');
-  const guestCount = watch('guestCount');
-  const roomCount = watch('roomCount');
-  const bathroomCount = watch('bathroomCount');
+  const souscategory = watch('souscategory');
   const imageSrc = watch('imageSrc');
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
@@ -177,32 +173,60 @@ const RentModal = () => {
 
   if (step === STEPS.INFO) {
     bodyContent = (
+      // <div className="flex flex-col gap-8">
+      //   <Heading
+      //     title="Share some basics about your place"
+      //     subtitle="What amenitis do you have?"
+      //   />
+      //   <Counter 
+      //     onChange={(value) => setCustomValue('guestCount', value)}
+      //     value={guestCount}
+      //     title="Guests" 
+      //     subtitle="How many guests do you allow?"
+      //   />
+      //   <hr />
+      //   <Counter 
+      //     onChange={(value) => setCustomValue('roomCount', value)}
+      //     value={roomCount}
+      //     title="Rooms" 
+      //     subtitle="How many rooms do you have?"
+      //   />
+      //   <hr />
+      //   <Counter 
+      //     onChange={(value) => setCustomValue('bathroomCount', value)}
+      //     value={bathroomCount}
+      //     title="Bathrooms" 
+      //     subtitle="How many bathrooms do you have?"
+      //   />
+      // </div>
       <div className="flex flex-col gap-8">
-        <Heading
-          title="Share some basics about your place"
-          subtitle="What amenitis do you have?"
-        />
-        <Counter 
-          onChange={(value) => setCustomValue('guestCount', value)}
-          value={guestCount}
-          title="Guests" 
-          subtitle="How many guests do you allow?"
-        />
-        <hr />
-        <Counter 
-          onChange={(value) => setCustomValue('roomCount', value)}
-          value={roomCount}
-          title="Rooms" 
-          subtitle="How many rooms do you have?"
-        />
-        <hr />
-        <Counter 
-          onChange={(value) => setCustomValue('bathroomCount', value)}
-          value={bathroomCount}
-          title="Bathrooms" 
-          subtitle="How many bathrooms do you have?"
-        />
+      <Heading
+        title="Which of these best describes your entreprise?"
+        subtitle="Pick a sous-category"
+      />
+      <div 
+        className="
+          grid 
+          grid-cols-1 
+          md:grid-cols-2 
+          gap-3
+          max-h-[50vh]
+          overflow-y-auto
+        "
+      >
+        {categories.map((item) => (
+          <div key={item.label} className="col-span-1">
+            <CategoryInput
+              onClick={(category) => 
+                setCustomValue('category', category)}
+              selected={category === item.label}
+              label={item.label}
+              icon={item.icon}
+            />
+          </div>
+        ))}
       </div>
+    </div>
     )
   }
 
@@ -253,14 +277,13 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Now, set your price"
-          subtitle="How much do you charge per night?"
+          title="Now, set your web site"
+          subtitle="What is a link of your website?"
         />
         <Input
           id="price"
-          label="Price"
-          formatPrice 
-          type="number" 
+          label="Web Site"
+          formatPrice  
           disabled={isLoading}
           register={register}
           errors={errors}

@@ -18,9 +18,7 @@ export async function POST(
     description,
     imageSrc,
     category,
-    roomCount,
-    bathroomCount,
-    guestCount,
+    souscategory,
     location,
     price,
    } = body;
@@ -37,11 +35,9 @@ export async function POST(
       description,
       imageSrc,
       category,
-      roomCount,
-      bathroomCount,
-      guestCount,
+      souscategory,
       locationValue: location.value,
-      price: parseInt(price, 10),
+      price,
       userId: currentUser.id
     }
   });
