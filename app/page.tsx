@@ -30,7 +30,7 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <ClientOnly>
       <Container>
-        <div className="flex gap-3 mt-5">
+        <div className="flex gap-3 mt-20">
           <FaSlackHash className="text-indigo-500 text-3xl"/>
           <Heading
             title="Entreprises"
