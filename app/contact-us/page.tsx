@@ -1,10 +1,12 @@
 "use client"
 
+import FormContact from "../components/contact/FormContact";
+
 const Contact = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <FormContact />
+        </>
     );
 }
 
