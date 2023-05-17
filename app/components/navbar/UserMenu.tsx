@@ -13,6 +13,7 @@ import { SafeUser } from "@/app/types";
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import PopOverMenu from "./PopOverMenu";
+import { HiUser } from "react-icons/hi2";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -111,19 +112,26 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   label="My trips" 
                   onClick={() => router.push('/trips')}
                 /> */}
+                <div className="flex gap-2">
+                  <HiUser />
+                  <MenuItem 
+                    label="Profile" 
+                    onClick={() => router.push('/profile')}
+                  />
+                </div>
                 <MenuItem 
-                  label="My profile" 
-                  onClick={() => router.push('/profile')}
-                />
-                <MenuItem 
-                  label="My favorites" 
+                  label="Favorites" 
                   onClick={() => router.push('/favorites')}
                 />
-                {/* <MenuItem 
-                  label="My reservations" 
+                <MenuItem 
+                  label="Reservations" 
                   onClick={() => router.push('/reservations')}
                 />
                 <MenuItem 
+                  label="Boutique" 
+                  onClick={() => router.push('/reservations')}
+                />
+                {/* <MenuItem 
                   label="My properties" 
                   onClick={() => router.push('/properties')}
                 /> */}
