@@ -4,7 +4,7 @@
     width: 100%;
     min-height: 100vh;
     padding: 2rem;
-    background-color: #F5F3F3;
+    /* background-color: #F5F3F3; */
     overflow: hidden;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .contactForm {
-    background-color: #349ebf;
+    background-color: #6366F1;
     position: relative;
 }
 
@@ -52,7 +52,7 @@
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #349ebf;
+    background-color: #6366F1;
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -130,7 +130,7 @@ textarea.input {
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: #349ebf;
+    color: #6366F1;
     line-height: 1;
     width: 100%;
     border-radius: 25px;
@@ -140,6 +140,7 @@ textarea.input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .btn:hover {
@@ -195,7 +196,7 @@ textarea.input {
 
 .icon {
     width: 50px;
-    color: #349ebf;
+    color: #6366F1;
 }
 
 .contactInfo {
@@ -205,8 +206,9 @@ textarea.input {
 }
 
 .contactInfo .title {
-    color: #349ebf;
+    color: #6366F1;
     margin: 0 0 2rem 0;
+    font-size: 35px;
 }
 
 .text {
@@ -250,7 +252,7 @@ textarea.input {
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 }
-.wrapper .icon span{
+.wrapper .icon a{
     display: block;
     height: 60px;
     width: 60px;
@@ -261,13 +263,15 @@ textarea.input {
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon span i{
+.wrapper .icon a i{
     line-height: 60px;
     font-size: 25px;
 }
 .wrapper .icon .tooltip{
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
     background: #fff;
     color: #fff;
@@ -296,37 +300,41 @@ textarea.input {
     transform: translateX(-50%) rotate(45deg);
     transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon:hover span{
+.wrapper .icon .facebook:hover a{
     color: #fff;
 }
-.wrapper .icon:hover span,
+.wrapper .icon .twitter:hover a{
+    color: #fff;
+}
+.wrapper .icon .instagram:hover a{
+    color: #fff;
+}
+.wrapper .icon .snapchat:hover a i{
+    color: #fff;
+}
+.wrapper .icon:hover a,
 .wrapper .icon:hover .tooltip{
     text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 }
-.wrapper .facebook:hover span,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip:before{
+.wrapper .icon .facebook:hover a,
+.wrapper .icon .facebook:hover .tooltip,
+.wrapper .icon .facebook:hover .tooltip:before{
     background: #3B5999;
 }
-.wrapper .twitter:hover span,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip:before{
+.wrapper .icon .twitter:hover a,
+.wrapper .icon .twitter:hover .tooltip,
+.wrapper .icon .twitter:hover .tooltip:before{
     background: #46C1F6;
 }
-.wrapper .instagram:hover span,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip:before{
+.wrapper .icon .instagram:hover a,
+.wrapper .icon .instagram:hover .tooltip,
+.wrapper .icon .instagram:hover .tooltip:before{
     background: #e1306c;
 }
-.wrapper .github:hover span,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip:before{
-    background: #333;
-}
-.wrapper .youtube:hover span,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip:before{
-    background: #DE463B;
+.wrapper .icon .snapchat:hover a,
+.wrapper .icon .snapchat:hover .tooltip,
+.wrapper .icon .snapchat:hover .tooltip:before{
+    background: #DDDB2B;
 }
 
 .contactInfo:before {
@@ -431,19 +439,19 @@ textarea.input {
     }
 
     .title {
-        font-size: 1.15rem;
+        font-size: 4rem;
     }
 
     .wrapper .icon {
         margin-right: 1px;
     }
 
-    .wrapper .icon span{
+    .wrapper .icon a{
         width: 30px;
         height: 30px;
     }
 
-    .wrapper .icon span i{
+    .wrapper .icon a i{
         line-height: 30px;
         font-size: 0.5rem;
     }
