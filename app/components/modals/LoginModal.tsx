@@ -19,12 +19,27 @@ import Modal from "./Modal";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
 import Button from "../Button";
+import * as Yup from 'yup';
+import { Formik } from "formik";
+import { FormikValues, FormikHelpers } from "formik/dist/types";
 
 const LoginModal = () => {
   const router = useRouter();
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
+
+  const SignupSchema = Yup.object().shape({
+
+    password: Yup.string()
+      .min(7, 'Password must have min 8  characters')
+      .required('Required'),
+ 
+    email: Yup.string().email('Invalid email').required('Required'),
+ 
+  });
+ 
+  
 
   const { 
     register, 
@@ -50,12 +65,22 @@ const LoginModal = () => {
     .then((callback) => {
       setIsLoading(false);
 
-      if (callback?.ok) {
+      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data.email)) {
+        toast.error('Invalid email address');
+      }else if (callback?.ok) {
         toast.success('Logged in');
         router.refresh();
         loginModal.onClose();
       }
-      
+
+      if (data.password.length < 8) {
+        toast.error('Password must have min 8  characters');
+      }else if (callback?.ok) {
+        toast.success('Logged in');
+        router.refresh();
+        loginModal.onClose();
+      }
+
       if (callback?.error) {
         toast.error(callback.error);
       }
@@ -125,7 +150,18 @@ const LoginModal = () => {
   )
 
   return (
-    <Modal
+    <Formik
+      initialValues={{
+        email: '',
+        password: '',
+      }}
+      onSubmit={values => {
+        console.log(values);
+
+      }}
+      validationSchema={SignupSchema}
+    >
+      <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
       title="Login"
@@ -135,6 +171,8 @@ const LoginModal = () => {
       body={bodyContent}
       footer={footerContent}
     />
+    </Formik>
+    
   );
 }
 
