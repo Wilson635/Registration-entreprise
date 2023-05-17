@@ -116,13 +116,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   label="My trips" 
                   onClick={() => router.push('/trips')}
                 /> */}
-                <div className="flex gap-2">
-                  <HiUser />
                   <MenuItem 
                     label="Profile" 
                     onClick={() => router.push('/profile')}
                   />
-                </div>
                 <MenuItem 
                   label="Favorites" 
                   onClick={() => router.push('/favorites')}
