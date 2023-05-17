@@ -7,34 +7,6 @@ import '../../../public/fontawesome-free-6.1.1-web/css/all.css'
 
 const FormContact = () => {
 
-    const Click = () => {
-
-        const inputs = document.querySelectorAll(".input");
-
-        const handleInputs = (e : any) => {
-            const parent = e.target.parentNode;
-            parent.classList.add("focus");
-        }
-
-        function handInputs(e: any) {
-            const parent = e.target.parentNode;
-            parent.ClassList.add
-        }
-
-        const blurFunc = (e : any) => {
-            let parent = e.target.parentNode;
-            if (e.target.value == "") {
-                parent.classList.remove("focus");
-            }
-        }
-
-        inputs.forEach((input) => {
-            input.addEventListener("focus", handleInputs);
-            input.addEventListener("blur", blurFunc);
-        })
-
-    }
-
 
     return (
         <>
@@ -109,7 +81,7 @@ const FormContact = () => {
                         <span className={styles.circleone}></span>
                         <span className={styles.circletwo}></span>
 
-                        <form action="" className={styles.formContact} onClick={Click}>
+                        <form action="" className={styles.formContact}>
                             <div className={styles.inputContainer}>
                                 <input type="text" name="name" className={styles.input} placeholder=" Nom "/>
                             </div>
