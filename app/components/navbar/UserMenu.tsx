@@ -14,6 +14,7 @@ import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import PopOverMenu from "./PopOverMenu";
 import { HiUser } from "react-icons/hi2";
+import { GiNotebook } from "react-icons/gi";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -47,6 +48,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
       <div className="flex flex-row items-center gap-3">
         <div>
           <PopOverMenu  />
+        </div>
+        <div className="p-2 hover:bg-indigo-100 rounded-full">
+          <GiNotebook className="cursor-pointer text-indigo-500 text-2xl"/>
         </div>
         <div 
           onClick={onRent}
@@ -129,7 +133,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem 
                   label="Boutique" 
-                  onClick={() => router.push('/reservations')}
+                  onClick={() => router.push('/mybookshop')}
                 />
                 {/* <MenuItem 
                   label="My properties" 
