@@ -1,14 +1,14 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { DiTerminal } from "react-icons/di";
-import { MdCommute, MdConstruction, MdOutlinePeopleAlt, MdSettings, MdShoppingBag, MdWaterDrop } from "react-icons/md";
+import { MdCommute, MdConstruction, MdWaterDrop } from "react-icons/md";
 import { FaCreditCard, FaLeaf } from 'react-icons/fa';
 import { RiHeartPulseLine, RiPieChartLine } from "react-icons/ri";
 
 import CategoryBox from "../CategoryBox";
 import Container from '../Container';
 import { BiBus } from 'react-icons/bi';
+import { HiCog, HiComputerDesktop, HiShoppingBag, HiUserGroup } from 'react-icons/hi2';
 
 
 export const categories = [
@@ -24,17 +24,17 @@ export const categories = [
   },
   {
     label: "Commerce",
-    icon: MdShoppingBag,
+    icon: HiShoppingBag,
     description: "Commerce",
   },
   {
     label: "Industrie",
-    icon: MdSettings,
+    icon: HiCog,
     description: "Industrie",
   },
   {
     label: "Informatique",
-    icon: DiTerminal,
+    icon: HiComputerDesktop,
     description: "Informatique & telecom",
   },
   {
@@ -63,7 +63,7 @@ export const categories = [
 
   {
     label: "Administration",
-    icon: MdOutlinePeopleAlt,
+    icon: HiUserGroup,
     description: "Administration",
   },
 
