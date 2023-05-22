@@ -26,6 +26,17 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+
+model Comment {
+
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  comment String
+  userId String @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+}
+
 model User {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   name            String?
@@ -40,6 +51,7 @@ model User {
   accounts Account[]
   listings Listing[]
   reservations Reservation[]
+  comment Comment[]
 }
 
 model Reservation {
