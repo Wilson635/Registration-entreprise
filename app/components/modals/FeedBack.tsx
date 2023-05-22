@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { HiOutlineChatBubbleBottomCenter } from "react-icons/hi2";
+import { SlClose } from "react-icons/sl";
 
 export default function FeedBack() {
     let [isOpen, setIsOpen] = useState(true);
@@ -54,9 +55,10 @@ export default function FeedBack() {
                                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-lg font-medium leading-6 text-gray-900"
+                                        className="text-lg flex gap-36 justify-beetween font-medium leading-6 text-gray-900 mb-6"
                                     >
                                         Partagez vos commentaires!
+                                        <SlClose onClick={closeModal} size={25} className="flex-end cursor-pointer text-rose-500"/>
                                     </Dialog.Title>
                                     <div className="mt-2">
                                         <textarea
