@@ -20,7 +20,7 @@ export default function FeedBack() {
                 <button
                     type="button"
                     onClick={openModal}
-                    className="flex gqp-2 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                    className="flex gqp-5 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                 >
                     <HiOutlineChatBubbleBottomCenter className="cursor-pointer text-indigo-500 text-2xl" />{" "}
                     <span className="hidden md:block"> Feedback </span>

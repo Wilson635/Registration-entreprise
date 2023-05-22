@@ -49,7 +49,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         <div>
           <PopOverMenu  />
         </div>
-        <div className="p-2 hover:bg-indigo-100 rounded-full">
+        <div className="p-2 hover:bg-neutral-100 rounded-full">
           <FeedBack />
           {/* <GiNotebook className="cursor-pointer text-indigo-500 text-2xl"/> */}
         </div>
