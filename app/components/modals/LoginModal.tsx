@@ -19,9 +19,6 @@ import Modal from "./Modal";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
 import Button from "../Button";
-import * as Yup from 'yup';
-import { Formik } from "formik";
-import { FormikValues, FormikHelpers } from "formik/dist/types";
 
 const LoginModal = () => {
   const router = useRouter();
@@ -29,17 +26,6 @@ const LoginModal = () => {
   const registerModal = useRegisterModal();
   const [isLoading, setIsLoading] = useState(false);
 
-  const SignupSchema = Yup.object().shape({
-
-    password: Yup.string()
-      .min(7, 'Password must have min 8  characters')
-      .required('Required'),
- 
-    email: Yup.string().email('Invalid email').required('Required'),
- 
-  });
- 
-  
 
   const { 
     register, 
@@ -150,18 +136,7 @@ const LoginModal = () => {
   )
 
   return (
-    <Formik
-      initialValues={{
-        email: '',
-        password: '',
-      }}
-      onSubmit={values => {
-        console.log(values);
-
-      }}
-      validationSchema={SignupSchema}
-    >
-      <Modal
+    <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
       title="Login"
@@ -171,7 +146,6 @@ const LoginModal = () => {
       body={bodyContent}
       footer={footerContent}
     />
-    </Formik>
     
   );
 }
