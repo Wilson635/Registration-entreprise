@@ -13,8 +13,8 @@ import { SafeUser } from "@/app/types";
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import PopOverMenu from "./PopOverMenu";
-import { HiUser } from "react-icons/hi2";
 import { GiNotebook } from "react-icons/gi";
+import FeedBack from "../modals/FeedBack";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -50,7 +50,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
           <PopOverMenu  />
         </div>
         <div className="p-2 hover:bg-indigo-100 rounded-full">
-          <GiNotebook className="cursor-pointer text-indigo-500 text-2xl"/>
+          <FeedBack />
+          {/* <GiNotebook className="cursor-pointer text-indigo-500 text-2xl"/> */}
         </div>
         <div 
           onClick={onRent}
