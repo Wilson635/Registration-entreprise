@@ -2,9 +2,40 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { HiOutlineChatBubbleBottomCenter } from "react-icons/hi2";
 import { SlClose } from "react-icons/sl";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { 
+    FieldValues, 
+    SubmitHandler,
+    useForm
+  } from "react-hook-form";
 
 export default function FeedBack() {
     let [isOpen, setIsOpen] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const {
+        handleSubmit,
+    } = useForm<FieldValues>({
+        defaultValues: {
+            comment: '',
+        },
+    });
+
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+        setIsLoading(true);
+
+        axios.post('/api/feedback', data)
+            .then(() => {
+                toast.success('Feedback sent!');
+            })
+            .catch((error) => {
+                toast.error(error);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
+    }
 
     function closeModal() {
         setIsOpen(false);
@@ -27,7 +58,7 @@ export default function FeedBack() {
                 </button>
             </div>
 
-            <Transition appear show={isOpen} as={Fragment}>
+            <Transition appear show={isOpen} as={Fragment} >
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
@@ -58,11 +89,12 @@ export default function FeedBack() {
                                         className="text-lg flex gap-36 justify-beetween font-medium leading-6 text-gray-900 mb-6"
                                     >
                                         Partagez vos commentaires!
-                                        <SlClose onClick={closeModal} size={25} className="flex-end cursor-pointer text-rose-500"/>
+                                        <SlClose onClick={closeModal} size={25} className="flex-end cursor-pointer text-rose-500" />
                                     </Dialog.Title>
                                     <div className="mt-2">
                                         <textarea
                                             rows={8}
+                                            disabled={isLoading}
                                             placeholder="Entrer votre message ici"
                                             className="
                                                 resize-none 
@@ -86,7 +118,7 @@ export default function FeedBack() {
                                         <button
                                             type="button"
                                             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                            onClick={closeModal}
+                                            onSubmit={handleSubmit(onSubmit)}
                                         >
                                             Soumettre
                                         </button>
