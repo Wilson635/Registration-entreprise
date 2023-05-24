@@ -1,10 +1,17 @@
-"use client"
+
+
+import ClientOnly from "../components/ClientOnly";
+import Container from "../components/Container";
 
 const Discussion = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <ClientOnly>
+                <Container>
+                    Discussion page
+                </Container>
+            </ClientOnly>
+        </>
     );
 }
 

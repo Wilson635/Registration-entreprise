@@ -1,10 +1,17 @@
-"use client"
+
+
+import ClientOnly from "../components/ClientOnly";
+import Container from "../components/Container";
 
 const Guide = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <ClientOnly>
+                <Container>
+                    Guide page
+                </Container>
+            </ClientOnly>
+        </>
     );
 }
 
