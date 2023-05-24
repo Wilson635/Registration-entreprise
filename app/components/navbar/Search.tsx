@@ -7,6 +7,7 @@ import { differenceInDays } from 'date-fns';
 
 import useSearchModal from '@/app/hooks/useSearchModal';
 import useCountries from '@/app/hooks/useCountries';
+import PopOverMenu from "./PopOverMenu";
 
 const Search = () => {
   const searchModal = useSearchModal();
@@ -51,6 +52,7 @@ const Search = () => {
   }, [guestCount]);
 
   return ( 
+    <>
     <div
       onClick={searchModal.onOpen}
       className="
@@ -121,7 +123,9 @@ const Search = () => {
           </div>
         </div>
       </div>
+      
     </div>
+    </>
   );
 }
  

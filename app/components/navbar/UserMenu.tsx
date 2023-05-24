@@ -61,7 +61,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
           flex 
           flex-row 
           items-center 
-          gap-3 
           rounded-full 
           cursor-pointer 
           hover:shadow-md 
