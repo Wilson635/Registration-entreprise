@@ -1,11 +1,18 @@
-"use client"
+
+
+import ClientOnly from "../components/ClientOnly";
+import Container from "../components/Container";
 
 
 const Podcast = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <ClientOnly>
+                <Container>
+                Podcast page
+                </Container>
+            </ClientOnly>
+        </>
     );
 }
 

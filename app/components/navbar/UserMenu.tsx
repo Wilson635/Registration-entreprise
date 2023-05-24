@@ -51,48 +51,23 @@ const UserMenu: React.FC<UserMenuProps> = ({
         </div>
         <div className="p-2 hover:bg-neutral-100 rounded-full">
           <FeedBack />
-          {/* <GiNotebook className="cursor-pointer text-indigo-500 text-2xl"/> */}
-        </div>
-        <div 
-          onClick={onRent}
-          className="
-            hidden
-            md:block
-            text-sm 
-            font-semibold 
-            py-3 
-            px-4 
-            rounded-full 
-            hover:bg-neutral-100 
-            transition 
-            cursor-pointer
-          "
-        >
-          Add Entreprise
         </div>
         <div 
         onClick={toggleOpen}
         className="
-          p-4
-          md:py-1
-          md:px-5
+          p-2
           border-[1px] 
           border-neutral-200 
           flex 
           flex-row 
           items-center 
-          gap-3 
           rounded-full 
           cursor-pointer 
           hover:shadow-md 
           transition
           "
         >
-          <AiOutlineMenu />
-          <div className="hidden md:flex grid-cols-2 gap-2 items-center">
-            <Avatar src={currentUser?.image} />
-            <span className="text-lg font-semibold"> {currentUser?.name} </span>
-          </div>
+          <Avatar src={currentUser?.image} />
         </div>
       </div>
       {isOpen && (
@@ -102,6 +77,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             rounded-xl 
             shadow-md
             w-[40vw]
+            lg:w-3/4 
             md:w-3/4 
             bg-white 
             overflow-hidden 
@@ -117,6 +93,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   label="My trips" 
                   onClick={() => router.push('/trips')}
                 /> */}
+                <div className="flex flex-col p-5">
+                  <p className="text-sm"> Connecté en tant que </p>
+                  <span className="font-bold text-md"> {currentUser?.email} </span>
+                </div>
+                <hr />
                   <MenuItem 
                     label="Profile" 
                     onClick={() => router.push('/profile')}
@@ -125,10 +106,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   label="Favorites" 
                   onClick={() => router.push('/favorites')}
                 />
-                <MenuItem 
+                {/* <MenuItem 
                   label="Reservations" 
                   onClick={() => router.push('/reservations')}
-                />
+                /> */}
                 <MenuItem 
                   label="Boutique" 
                   onClick={() => router.push('/mybookshop')}

@@ -1,11 +1,20 @@
-"use client"
+
+
+import ClientOnly from "../components/ClientOnly";
+import Container from "../components/Container";
+import HeadProfile from "../components/profile/HeadProfile";
 
 
 const Profile = () => {
     return (
-        <div>
-            Enter
-        </div>
+        <>
+            <ClientOnly>
+                <Container>
+                    <HeadProfile />
+                    Profile Page
+                </Container>
+            </ClientOnly>
+        </>
     );
 }
 
