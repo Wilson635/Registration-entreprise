@@ -52,23 +52,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
         <div className="p-2 hover:bg-neutral-100 rounded-full">
           <FeedBack />
         </div>
-        {/* <div 
-          onClick={onRent}
-          className="
-            hidden
-            md:block
-            text-sm 
-            font-semibold 
-            py-3 
-            px-4 
-            rounded-full 
-            hover:bg-neutral-100 
-            transition 
-            cursor-pointer
-          "
-        >
-          Add Entreprise
-        </div> */}
         <div 
         onClick={toggleOpen}
         className="
@@ -85,11 +68,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           transition
           "
         >
-          {/* <AiOutlineMenu /> */}
           <Avatar src={currentUser?.image} />
-          {/* <div className="hidden md:flex grid-cols-2items-center">
-            <Avatar src={currentUser?.image} />
-          </div> */}
         </div>
       </div>
       {isOpen && (
@@ -99,6 +78,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             rounded-xl 
             shadow-md
             w-[40vw]
+            lg:w-3/4 
             md:w-3/4 
             bg-white 
             overflow-hidden 
