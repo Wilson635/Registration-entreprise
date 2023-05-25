@@ -12,13 +12,16 @@ import {
     HiMapPin,
     HiPencil
 } from 'react-icons/hi2'
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, Switch, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import Avatar from '../Avatar'
 // import getCurrentUser from '@/app/actions/getCurrentUser'
 import { SafeUser } from '@/app/types'
 import Container from '../Container'
-import {TabsProfile} from './TabsProfile'
+import { TabsProfile } from './TabsProfile'
+import { Box, Card, Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
+import { LocationOn, Edit } from '@material-ui/icons'
+import { grey } from '@mui/material/colors'
 
 
 interface ProfileProps {
@@ -38,18 +41,37 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                 src="/images/cover.jpg"
                 alt="App screenshot"
             />
-        
+
             <Container>
 
                 <div className="lg:flex flex-col lg:justify-between">
-                    
+
                     <div className="min-w-0 flex-1">
-                        
-                        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-                            
-                            {currentUser?.email}
-                            {currentUser?.name}
-                        </h2>
+
+                        <Card>
+                            <Box sx={{ p: 2, display: 'flex' }}>
+                                <Avatar variant="rounded" src={currentUser?.image}/>
+                                <Stack spacing={0.5}>
+                                    <Typography fontWeight={700}>{currentUser?.name}</Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
+                                    </Typography>
+                                </Stack>
+                                <IconButton>
+                                    <Edit sx={{ fontSize: 14 }} />
+                                </IconButton>
+                            </Box>
+                            <Divider />
+                            <Stack
+                                direction="row"
+                                alignItems="center"
+                                justifyContent="space-between"
+                                sx={{ px: 2, py: 1, bgcolor: 'background.default' }}
+                            >
+                                <Chip>Active account</Chip>
+                                <Switch />
+                            </Stack>
+                        </Card>
                         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                             <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiBriefcase className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />

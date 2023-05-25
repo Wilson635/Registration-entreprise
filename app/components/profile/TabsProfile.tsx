@@ -94,7 +94,7 @@ export const TabsProfile: React.FC<UserProps> = ({
                             <main>
                                 <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-12 border-dashed border-2 rounded-lg items-center gap-y-5">
                                     <div className="items-center justify-center grid ">
-                                        <HiNewspaper className='text-indigo-500 text-4xl' />
+                                        <HiNewspaper className='text-indigo-500 text-4xl text-center' />
                                         <p>
                                             {currentUser?.name} n'a pas encore posté d'articles
                                         </p>
