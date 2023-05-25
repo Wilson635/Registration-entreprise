@@ -21,11 +21,10 @@ const Profile = async () => {
 
     return (
         <>
-            <HeadProfile />
             <ClientOnly>
                 <Container>
                     
-                    Profile Page
+                    <HeadProfile />
                 </Container>
             </ClientOnly>
         </>

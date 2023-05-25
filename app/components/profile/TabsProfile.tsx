@@ -9,9 +9,10 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import getListings, { 
-    IListingsParams
-} from "@/app/actions/getListings";
+import { SafeUser } from '@/app/types';
+import { HiNewspaper, HiChatBubbleBottomCenterText } from 'react-icons/hi2';
+import Button from '@mui/material/Button';
+import Add from '@material-ui/icons/Add';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -21,7 +22,7 @@ interface TabPanelProps {
 }
 
 interface UserProps {
-    searchParams: IListingsParams
+    currentUser?:SafeUser|null
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -51,11 +52,11 @@ function a11yProps(index: number) {
     };
 }
 
-export const TabsProfile = async ({ searchParams }: UserProps) => {
+export const TabsProfile: React.FC<UserProps> = ({
+    currentUser
+  }) => {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
-    const listings = await getListings(searchParams);
-    const currentUser = await getCurrentUser();
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -90,25 +91,49 @@ export const TabsProfile = async ({ searchParams }: UserProps) => {
                         onChangeIndex={handleChangeIndex}
                     >
                         <TabPanel value={value} index={0} dir={theme.direction}>
-                            <div className='items-center grid grid-cols-1 p-5 border-1px border-dashed mx-auto max-w-7xl py-6 sm:px-6 lg:px-8'>
-                                
-                                <p>
-                                    {currentUser?.name} n'a pas encore posté d'articles
-                                </p>
-                            </div>
                             <main>
-                                <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                                <p>
-                                    {currentUser?.name} n'a pas encore posté d'articles
-                                </p>
+                                <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-12 border-dashed border-2 rounded-lg items-center gap-y-5">
+                                    <div className="items-center justify-center grid ">
+                                        <HiNewspaper className='text-indigo-500 text-4xl' />
+                                        <p>
+                                            {currentUser?.name} n'a pas encore posté d'articles
+                                        </p>
+                                        <Button className='bg-none text-white capitalize px-12 hover:text-indigo-500' variant="outlined" startIcon={<Add />}>
+                                            Nouvel Article
+                                        </Button>
+                                    </div>
                                 </div>
                             </main>
                         </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
-                            Item Two
+                            <main>
+                                <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 border-dashed border-2 rounded-lg items-center gap-y-5">
+                                    <div className="items-center justify-center grid ">
+                                        <HiChatBubbleBottomCenterText className='text-indigo-500 text-4xl' />
+                                        <p>
+                                            {currentUser?.name} n'a pas encore posté de discussions
+                                        </p>
+                                        <Button className='bg-none text-white capitalize px-12 hover:text-indigo-500' variant="outlined" startIcon={<Add />}>
+                                            Nouvelle dicussion
+                                        </Button>
+                                    </div>
+                                </div>
+                            </main>
                         </TabPanel>
                         <TabPanel value={value} index={2} dir={theme.direction}>
-                            Item Three
+                            <main>
+                                <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 border-dashed border-2 rounded-lg items-center gap-y-5">
+                                    <div className="items-center justify-center grid ">
+                                        <HiNewspaper className='text-indigo-500 text-4xl' />
+                                        <p>
+                                            {currentUser?.name} n'a pas encore posté d'articles
+                                        </p>
+                                        <Button className='bg-none text-white capitalize  px-12 hover:text-indigo-500' variant="outlined" startIcon={<Add />}>
+                                            Nouvel Article
+                                        </Button>
+                                    </div>
+                                </div>
+                            </main>
                         </TabPanel>
                     </SwipeableViews>
                 </Box>
