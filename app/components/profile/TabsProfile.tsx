@@ -9,7 +9,9 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import { SafeUser } from '@/app/types';
+import getListings, { 
+    IListingsParams
+} from "@/app/actions/getListings";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -19,7 +21,7 @@ interface TabPanelProps {
 }
 
 interface UserProps {
-    currentUser?:SafeUser|null
+    searchParams: IListingsParams
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -49,11 +51,11 @@ function a11yProps(index: number) {
     };
 }
 
-export const TabsProfile: React.FC<UserProps> = ({
-    currentUser
-  }) => {
+export const TabsProfile = async ({ searchParams }: UserProps) => {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
+    const listings = await getListings(searchParams);
+    const currentUser = await getCurrentUser();
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -87,7 +89,7 @@ export const TabsProfile: React.FC<UserProps> = ({
                         index={value}
                         onChangeIndex={handleChangeIndex}
                     >
-                        <TabPanel value={value} index={0} dir={theme.direction}  className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                        <TabPanel value={value} index={0} dir={theme.direction}>
                             <div className='items-center grid grid-cols-1 p-5 border-1px border-dashed mx-auto max-w-7xl py-6 sm:px-6 lg:px-8'>
                                 
                                 <p>
