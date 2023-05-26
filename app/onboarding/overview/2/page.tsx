@@ -27,7 +27,7 @@ const page = () => {
                             </div>
                             <div className="md:flex md:justify-between md:gap-6 xl:gap-10">
                                 <div className="mb-5 max-h-[600px] overflow-hidden rounded-lg md:mb-0 md:w-5/12">
-                                    <img src="/images/freelance/1.jpg" alt="features img" className="h-full scale-125 sm:w-full sm:object-cover"/>
+                                    <img src="/images/freelance/6.jpg" alt="features img" className="h-full scale-125 sm:w-full sm:object-cover"/>
                                 </div>
                                 <div className="md:w-7/12">
                                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
