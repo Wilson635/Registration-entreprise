@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 
@@ -47,31 +48,18 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                 <div className="lg:flex flex-col lg:justify-between">
 
                     <div className="min-w-0 flex-1">
-
-                        <Card>
-                            <Box sx={{ p: 2, display: 'flex' }}>
-                                <Avatar variant="rounded" src={currentUser?.image}/>
-                                <Stack spacing={0.5}>
-                                    <Typography fontWeight={700}>{currentUser?.name}</Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
-                                    </Typography>
-                                </Stack>
-                                <IconButton>
-                                    <Edit sx={{ fontSize: 14 }} />
-                                </IconButton>
-                            </Box>
-                            <Divider />
-                            <Stack
-                                direction="row"
-                                alignItems="center"
-                                justifyContent="space-between"
-                                sx={{ px: 2, py: 1, bgcolor: 'background.default' }}
-                            >
-                                <Chip>Active account</Chip>
-                                <Switch />
+                        <Box sx={{ p: 2, display: 'flex' }}>
+                            <Avatar variant="rounded" src={currentUser?.image}/>
+                            <Stack spacing={0.5}>
+                                <Typography fontWeight={700}>{currentUser?.name}</Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
+                                </Typography>
                             </Stack>
-                        </Card>
+                            <IconButton>
+                                <Edit sx={{ fontSize: 14 }} />
+                            </IconButton>
+                        </Box>
                         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                             <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiBriefcase className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
@@ -145,7 +133,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                     </div>
                 </div>
                 <div className="items-center flex">
-                    <TabsProfile />
+                    <TabsProfile currentUser={currentUser}/>
                 </div>
             </Container>
         </>

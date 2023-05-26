@@ -24,7 +24,7 @@ const Profile = async () => {
             <ClientOnly>
                 <Container>
                     
-                    <HeadProfile />
+                    <HeadProfile currentUser={currentUser}/>
                 </Container>
             </ClientOnly>
         </>

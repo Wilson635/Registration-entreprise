@@ -1,0 +1,144 @@
+
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
+import getCurrentUser from "@/app/actions/getCurrentUser";
+import ClientOnly from "@/app/components/ClientOnly";
+import Container from "@/app/components/Container";
+import EmptyState from "@/app/components/EmptyState";
+import Heading from "@/app/components/Heading";
+import NewLetter from "@/app/components/Newletter";
+import Accordion from "@/app/components/freelance/Accordeon";
+import FreelanceContent from "@/app/components/freelance/FreelanceContent";
+import FreelanceHead from "@/app/components/freelance/FreelanceHead";
+import { BsCheck2Circle } from "react-icons/bs";
+import { FaSlackHash } from "react-icons/fa";
+
+const page = () => {
+
+
+
+    return (
+        <>
+            <FreelanceHead />
+
+            <ClientOnly>
+                <Container>
+                    {/* <FreelanceContent /> */}
+                    <div>
+                        <Container>
+                            <div className="flex gap-3 mt-28">
+                                <FaSlackHash className="text-indigo-500 text-3xl" />
+                                <Heading
+                                    title="Recherche de missions freelance ? "
+                                    subtitle="Nous recherchons des talents comme le vôtre !  Proposez vos compétences dans une ou plusieurs de nos catégories et recevez des projets intéressants de clients du monde entier."
+                                />
+                            </div>
+                            <div className="flex gap-3 mt-28">
+                                <FaSlackHash className="text-indigo-500 text-3xl" />
+                                <Heading
+                                    title="Comment ça marche ?"
+                                />
+                            </div>
+                            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-6">
+                                <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                                    <img className="w-full" src="/images/freelance/2.jpg" alt="Sunset in the mountains" />
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2">1. Créez votre service</div>
+                                        <p className="text-gray-700 text-base">
+                                            Inscrivez-vous gratuitement, créez votre service, et proposez votre travail à notre public international.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                                    <img className="w-full" src="/images/freelance/2.jpg" alt="Sunset in the mountains" />
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2">2. Démarrez le travail</div>
+                                        <p className="text-gray-700 text-base">
+                                            Recevez une notification lorsque vous obtenez une nouvelle commande sur Fiverr et discutez des détails avec les clients.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                                    <img className="w-full" src="/images/freelance/2.jpg" alt="Sunset in the mountains" />
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2">3. Soyez payé</div>
+                                        <p className="text-gray-700 text-base">
+                                            Recevez votre paiement à chaque fois que vous finaliserez une commande.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex gap-3 mt-28">
+                                <FaSlackHash className="text-indigo-500 text-3xl" />
+                                <Heading
+                                    title="Pourquoi choisir Annuary ?"
+                                />
+                            </div>
+                            <section className="py-16">
+                                <div className="mx-auto max-w-7xl px-8 md:px-6">
+                                    <div className="md:flex md:justify-between md:gap-6">
+                                        <div className="md:w-6/12">
+                                            <ul>
+                                                <li className="mb-6 flex items-center">
+                                                    <div className="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                                                        <BsCheck2Circle />
+                                                    </div>
+                                                    <p className="ml-4 max-w-md flex flex-col font-medium text-slate-600 text-justify"> <span className="text-xl font-bold">C'est gratuit</span>
+                                                        <span>Pas de frais d'inscription.</span>
+                                                    </p>
+                                                </li>
+                                                <li className="mb-6 flex items-center">
+                                                    <div className="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                                                        <BsCheck2Circle />
+                                                    </div>
+                                                    <p className="ml-4 max-w-md flex flex-col font-medium text-slate-600 text-justify"> <span className="text-xl font-bold">Des clients provenant du monde entier</span>
+                                                        <span>Les entreprises du monde entier nous font confiance.</span>
+                                                    </p>
+                                                </li>
+                                                <li className="mb-6 flex items-center">
+                                                    <div className="flex h-[35px] w-[35px] min-w-[35px] items-center justify-center rounded-full bg-blue-500 text-white">
+                                                        <BsCheck2Circle />
+                                                    </div>
+                                                    <p className="ml-4 max-w-md flex flex-col font-medium text-slate-600 text-justify"> <span className="text-xl font-bold">Flexibilité</span>
+                                                        <span>Fixez vos propres prix et délais de livraison</span>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="mt-8 flex justify-center md:mt-0 md:w-3/12">
+                                            <img src="/images/freelance/3.JPG" alt="about img" className="max-h-[500px] md:max-h-max" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                            <section className="py-16">
+                                <div className="mx-auto max-w-7xl px-8 md:px-6">
+                                    <div className="flex gap-3 ">
+                                        <FaSlackHash className="text-indigo-500 text-3xl" />
+                                        <Heading
+                                            title="Questions fréquentes"
+                                        />
+                                    </div>
+                                    <div className="md:flex md:justify-between md:gap-6">
+                                        <div className="mb-8 flex justify-center md:mb-0 md:w-5/12">
+                                            <img src="/images/freelance/4.png" alt="faq images" className="max-h-[500px] md:max-h-max" />
+                                        </div>
+                                        <div className="md:w-6/12">
+                                            <Accordion />
+                                        </div>
+                                    </div>
+                                </div >
+                            </section >
+                        </Container>
+                    </div>
+                </Container>
+                <NewLetter />
+            </ClientOnly>
+        </>
+    );
+}
+
+export default page;
