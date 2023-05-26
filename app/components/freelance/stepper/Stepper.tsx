@@ -10,6 +10,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import FormStepper from './personal/form';
+import FormStepperPro from './professional/form';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -35,7 +36,7 @@ function getStepContent(step: number) {
         case 0:
             return <FormStepper />;
         case 1:
-            return 'Info Professsionnelles';
+            return <FormStepperPro />;
         case 2:
             return 'Comptes lies';
         case 3:
