@@ -1,6 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client"
+
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+
+
+
 export default function FreelanceHead() {
+
+
+  const router = useRouter();
+
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-full">
@@ -26,12 +40,12 @@ export default function FreelanceHead() {
               Créez un service gratuitement aujourd'hui et recevez des demandes d'entreprises du monde entier.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a
-                href="#"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              <p
+                onClick={() => router.push('/onboarding/overview/1')}
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 cursor-pointer shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 S'inscrire maintenant
-              </a>
+              </p>
               {/* <a href="#" className="text-sm font-semibold leading-6 text-white">
                   Learn more <span aria-hidden="true">→</span>
                 </a> */}
