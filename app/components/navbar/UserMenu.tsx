@@ -111,7 +111,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/reservations')}
                 /> */}
                 <MenuItem 
-                  label="Devenez Prestataire" 
+                  label="Devenir Prestataire" 
                   onClick={() => router.push('/seller/freelance')}
                 />
                 {/* <MenuItem 
