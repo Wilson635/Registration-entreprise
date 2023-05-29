@@ -9,6 +9,7 @@ import {
     HiCheck,
     HiChevronDown,
     HiCurrencyDollar,
+    HiInbox,
     HiLink,
     HiMapPin,
     HiPencil
@@ -20,9 +21,10 @@ import Avatar from '../Avatar'
 import { SafeUser } from '@/app/types'
 import Container from '../Container'
 import { TabsProfile } from './TabsProfile'
-import { Box, Card, Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
+import { AvatarGroup, Box, Card, Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
 import { LocationOn, Edit } from '@material-ui/icons'
 import { grey } from '@mui/material/colors'
+import { HiGlobe } from 'react-icons/hi'
 
 
 interface ProfileProps {
@@ -48,85 +50,75 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                 <div className="lg:flex flex-col lg:justify-between">
 
                     <div className="min-w-0 flex-1">
-                        <Box sx={{ p: 2, display: 'flex' }}>
-                            <Avatar src={currentUser?.image}/>
-                            <Stack spacing={0.5}>
-                                <Typography fontWeight={700}>{currentUser?.name}</Typography>
-                                {/* <Typography variant="body2" color="text.secondary">
-                                    <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
-                                </Typography> */}
-                            </Stack>
-                        </Box>
+                        <div className='flex items-center justify-between gap-2'>
+                            <div className='p-2 flex gap-4'>
+                                <div 
+                                    className="
+                                    p-2
+                                    border-[1px] 
+                                    border-neutral-200 
+                                    flex 
+                                    flex-row 
+                                    items-center 
+                                    rounded-full 
+                                    cursor-pointer 
+                                    hover:shadow-md 
+                                    transition
+                                    "
+                                >
+                                    <Avatar src={currentUser?.image} />
+                                </div>
+                                <Stack spacing={0.2}>
+                                    <Typography fontWeight={700}>{currentUser?.name}</Typography>
+                                    <Typography fontWeight={200}>{currentUser?.email}</Typography>
+                                    
+                                </Stack>
+                            </div>
+                            <div>
+                                <span className="block sm:block">
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                    >
+                                        <HiPencil className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                                        Edit
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
                         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                             <div className="mt-2 flex items-center text-sm text-gray-500">
-                                <HiBriefcase className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                Full-time
-                            </div>
-                            <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                Remote
-                            </div>
-                            <div className="mt-2 flex items-center text-sm text-gray-500">
-                                <HiCurrencyDollar className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                $120k &ndash; $140k
+                                ....
                             </div>
                             <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiCalendar className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
                                 Inscrit le {currentUser?.createdAt}
                             </div>
                         </div>
-                    </div>
-                    <div className="mt-5 flex lg:ml-4 lg:mt-0">
-                        <span className="block sm:block">
-                            <button
-                                type="button"
-                                className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                            >
-                                <HiPencil className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-                                Edit
-                            </button>
-                        </span>
-
-                        {/* Dropdown */}
-                        {/* <Menu as="div" className="relative ml-3 sm:hidden">
-                            <Menu.Button className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400">
-                                More
-                                <HiChevronDown className="-mr-1 ml-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-                            </Menu.Button>
-
-                            <Transition
-                                as={Fragment}
-                                enter="transition ease-out duration-200"
-                                enterFrom="transform opacity-0 scale-95"
-                                enterTo="transform opacity-100 scale-100"
-                                leave="transition ease-in duration-75"
-                                leaveFrom="transform opacity-100 scale-100"
-                                leaveTo="transform opacity-0 scale-95"
-                            >
-                                <Menu.Items className="absolute right-0 z-10 -mr-1 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <a
-                                                href="#"
-                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                            >
-                                                Edit
-                                            </a>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <a
-                                                href="#"
-                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                            >
-                                                View
-                                            </a>
-                                        )}
-                                    </Menu.Item>
-                                </Menu.Items>
-                            </Transition>
-                        </Menu> */}
+                        <div className="px-9 py-5 mt-1 flex flex-col sm:mt-0 sm:flex-row items-center justify-between  sm:flex-wrap sm:space-x-6">
+                            <div className="mt-2 flex flex-col items-center text-sm text-gray-500">
+                                <div className="flex">
+                                    <HiInbox className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    Bibliographie
+                                </div>
+                                <span className='py-4'> .... </span>
+                            </div>
+                            <div className="mt-2 flex flex-col items-center text-sm text-gray-500">
+                                <div className="flex">
+                                    <HiGlobe className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    Site internet
+                                </div>
+                                <span className='py-4'> .... </span>
+                            </div>
+                            <div className="mt-2 flex flex-col items-center text-sm text-gray-500">
+                                {/* <div className="flex">
+                                    <HiGlobe className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    Site internet
+                                    <span className='py-4'> .... </span>
+                                </div> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="items-center flex">
