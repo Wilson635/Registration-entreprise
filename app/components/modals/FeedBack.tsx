@@ -11,6 +11,7 @@ import {
   } from "react-hook-form";
 
 export default function FeedBack() {
+    const [comment, setComment] = useState("");
     let [isOpen, setIsOpen] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -28,6 +29,7 @@ export default function FeedBack() {
         axios.post('/api/feedback', data)
             .then(() => {
                 toast.success('Feedback sent!');
+                console.log(data);
             })
             .catch((error) => {
                 toast.error(error);
@@ -83,47 +85,52 @@ export default function FeedBack() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                    <Dialog.Title
-                                        as="h3"
-                                        className="text-lg flex gap-36 justify-beetween font-medium leading-6 text-gray-900 mb-6"
-                                    >
-                                        Partagez vos commentaires!
-                                        <SlClose onClick={closeModal} size={25} className="flex-end cursor-pointer text-rose-500" />
-                                    </Dialog.Title>
-                                    <div className="mt-2">
-                                        <textarea
-                                            rows={8}
-                                            disabled={isLoading}
-                                            placeholder="Entrer votre message ici"
-                                            className="
-                                                resize-none 
-                                                block w-full 
-                                                rounded-md 
-                                                bg-gray-200
-                                                p-4
-                                                text-sm text-gray-1200 
-                                                placeholder:text-gray-1100 
-                                                border-transparent 
-                                                focus-visible:border-transparent 
-                                                focus:outline-none focus:ring-2 
-                                                focus:ring-indigo-700 
-                                                focus:ring-offset-2 
-                                                focus-visible:ring-opacity-75
-                                            "
-                                        />
-                                    </div>
-
-                                    <div className="mt-4">
-                                        <button
-                                            type="button"
-                                            className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                            onSubmit={handleSubmit(onSubmit)}
+                                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                        <Dialog.Title
+                                            as="h3"
+                                            className="text-lg flex gap-36 justify-beetween font-medium leading-6 text-gray-900 mb-6"
                                         >
-                                            Soumettre
-                                        </button>
-                                    </div>
-                                </Dialog.Panel>
+                                            Partagez vos commentaires!
+                                            <SlClose onClick={closeModal} size={25} className="flex-end cursor-pointer text-rose-500" />
+                                        </Dialog.Title>
+                                        <div className="mt-2">
+                                            <textarea
+                                                rows={8}
+                                                // value={comment}
+                                                disabled={isLoading}
+                                                placeholder="Entrer votre message ici"
+                                                className="
+                                                    resize-none 
+                                                    block w-full 
+                                                    rounded-md 
+                                                    bg-gray-200
+                                                    p-4
+                                                    text-sm text-gray-1200 
+                                                    placeholder:text-gray-1100 
+                                                    border-transparent 
+                                                    focus-visible:border-transparent 
+                                                    focus:outline-none focus:ring-2 
+                                                    focus:ring-indigo-700 
+                                                    focus:ring-offset-2 
+                                                    focus-visible:ring-opacity-75
+                                                "
+                                            />
+
+                                        </div>
+
+                                        <div className="mt-4 flex justify-between items-center gap-2">
+                                            <p className={`font-bold text-sm`}>{`${comment.length}/300`}</p>
+                                            <button
+                                                type="submit"
+                                                className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                
+                                            >
+                                                Soumettre
+                                            </button>
+                                        </div>
+                                    </Dialog.Panel>
+                                </form>
                             </Transition.Child>
                         </div>
                     </div>

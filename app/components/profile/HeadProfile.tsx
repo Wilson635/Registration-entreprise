@@ -49,16 +49,13 @@ export const HeadProfile: React.FC<ProfileProps> = ({
 
                     <div className="min-w-0 flex-1">
                         <Box sx={{ p: 2, display: 'flex' }}>
-                            <Avatar variant="rounded" src={currentUser?.image}/>
+                            <Avatar src={currentUser?.image}/>
                             <Stack spacing={0.5}>
                                 <Typography fontWeight={700}>{currentUser?.name}</Typography>
-                                <Typography variant="body2" color="text.secondary">
+                                {/* <Typography variant="body2" color="text.secondary">
                                     <LocationOn sx={{ color: grey[500] }} /> Scranton, PA
-                                </Typography>
+                                </Typography> */}
                             </Stack>
-                            <IconButton>
-                                <Edit sx={{ fontSize: 14 }} />
-                            </IconButton>
                         </Box>
                         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                             <div className="mt-2 flex items-center text-sm text-gray-500">
