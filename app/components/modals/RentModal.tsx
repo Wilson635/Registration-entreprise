@@ -21,6 +21,7 @@ import { categories } from '../navbar/Categories';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
+import CheckboxesTags, { itemsSousCategory } from '../SousCategoryItems';
 
 enum STEPS {
   CATEGORY = 0,
@@ -214,17 +215,8 @@ const RentModal = () => {
           overflow-y-auto
         "
       >
-        {categories.map((item) => (
-          <div key={item.label} className="col-span-1">
-            <CategoryInput
-              onClick={(category) => 
-                setCustomValue('category', category)}
-              selected={category === item.label}
-              label={item.label}
-              icon={item.icon}
-            />
-          </div>
-        ))}
+        <CheckboxesTags 
+        />
       </div>
     </div>
     )
