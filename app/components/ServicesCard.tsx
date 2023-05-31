@@ -9,10 +9,10 @@ const ServicesCard = () => {
         <>
             {data.map((item) => (
                 <div className="w-full overflow-hidden py-4" key={item.title}>
-                    <img className="w-full rounded-md h-60" src={item.image} alt="Sunset in the mountains" />
+                    <img className="abosulte w-full rounded-md h-60" src={item.image} alt="Sunset in the mountains" />
                     <Heading 
-                    title={item.title}
                     subtitle={item.subtitle}
+                    title={item.title}
                     />
                 </div>
             ))}
@@ -32,87 +32,48 @@ export const data = [
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Wordpress',
+        subtitle: 'Personnalisez votre site',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Voix Off',
+        subtitle: 'Partagez votre message',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Video explicative',
+        subtitle: 'Accrochez votre public',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Reseaux sociaux',
+        subtitle: 'Attirez plus de clients',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'SEO',
+        subtitle: 'Optimisez votre site',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Illustration',
+        subtitle: 'Illustrez vos reves',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Traduction',
+        subtitle: 'Internationalisez-vous',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Saisie de donnee',
+        subtitle: 'Comprenez votre entreprise',
         image: '/images/cover.jpg'
     },
     {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },{
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
-        image: '/images/cover.jpg'
-    },
-    {
-        title: 'Concepteur de logo',
-        subtitle: 'Creez votre marque',
+        title: 'Premiere de couverture',
+        subtitle: 'Presentez votre histoire',
         image: '/images/cover.jpg'
     },
 
