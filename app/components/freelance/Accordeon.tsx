@@ -38,7 +38,7 @@ export default function Accordion() {
                             </Disclosure.Button>
                             <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
                             Votre service montre au monde entier les prestations que vous proposez. Il donne aux clients toutes les informations dont ils ont besoin pour passer commande auprès de vous.
-                            Pour créer un service : Se connecter > Cliquez sur « Devenir prestataire » > Cliquez sur « Services » > Cliquez sur « Créer un nouveau service », puis suivez la procédure étape par étape. 
+                            Pour créer un service : Se connecter &gt; Cliquez sur « Devenir prestataire » &gt;  Cliquez sur « Services » &gt; Cliquez sur « Créer un nouveau service », puis suivez la procédure étape par étape. 
                             </Disclosure.Panel>
                         </>
                     )}
