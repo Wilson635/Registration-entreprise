@@ -58,6 +58,14 @@ const Home = async ({ searchParams }: HomeProps) => {
             />
           ))}
         </div>
+        <div className="flex gap-3 mt-28">
+          <FaSlackHash className="text-indigo-500 text-3xl"/>
+          <Heading
+            title="Services Populaires"
+            subtitle={""}
+          />
+        </div>
+        
       </Container>
       <NewLetter />
     </ClientOnly>
