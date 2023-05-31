@@ -27,10 +27,10 @@ const TagsArt = () => {
             <div className="py-4">
                 <h4 className="font-semibold mb-3"> Tous les tags </h4>
             </div>
-            <ol className="border-l border-neutral-300 dark:border-neutral-500">
+            <ol className="border-l border-indigo-300 dark:border-indigo-500">
                 {/* <!--First item--> */}
                 <li>
-                    <div className="flex-start flex items-center pt-3">
+                    <div className="flex-start flex items-center">
                         <div
                             className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
                         <p className="text-sm text-indigo-500 dark:text-indigo-300 cursor-pointer hover:text-indigo-700 hover:font-semibold">
@@ -67,6 +67,26 @@ const TagsArt = () => {
                             className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
                         <p className="text-sm text-indigo-500 dark:text-indigo-300 cursor-pointer hover:text-indigo-700 hover:font-semibold">
                             Freelance
+                        </p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div className="flex-start flex items-center pt-2">
+                        <div
+                            className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
+                        <p className="text-sm text-indigo-500 dark:text-indigo-300 cursor-pointer hover:text-indigo-700 hover:font-semibold">
+                            Photographie
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="flex-start flex items-center pt-2">
+                        <div
+                            className="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
+                        <p className="text-sm text-indigo-500 dark:text-indigo-300 cursor-pointer hover:text-indigo-700 hover:font-semibold">
+                            Travel
                         </p>
                     </div>
                 </li>
