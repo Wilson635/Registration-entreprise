@@ -10,6 +10,7 @@ import ClientOnly from "./components/ClientOnly";
 import NewLetter from "./components/Newletter";
 import Heading from "./components/Heading";
 import { FaSlackHash } from "react-icons/fa";
+import ServicesCard from "./components/ServicesCard";
 
 interface HomeProps {
   searchParams: IListingsParams
@@ -65,7 +66,21 @@ const Home = async ({ searchParams }: HomeProps) => {
             subtitle={""}
           />
         </div>
-        
+        <div 
+          className="
+            pt-16
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4
+            xl:grid-cols-5
+            2xl:grid-cols-6
+            gap-8
+          "
+        >
+          <ServicesCard />
+        </div>
       </Container>
       <NewLetter />
     </ClientOnly>
