@@ -1,7 +1,15 @@
+"use client"
 
+import { FaFacebookF, FaInstagram, FaSnapchatGhost, FaTwitter } from 'react-icons/fa'
 import { HiCalendarDays, HiHandRaised } from 'react-icons/hi2'
+import Logo from './navbar/Logo'
+import Image from 'next/image'
+import { useRouter } from "next/navigation";
 
 export default function NewLetter() {
+  const router = useRouter();
+
+
   return (
     <div className="absolute w-full isolate overflow-hidden bg-gray-900 py-16 mt-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -52,6 +60,33 @@ export default function NewLetter() {
               </dd>
             </div>
           </dl>
+        </div>
+        <hr className='mt-9'/>
+        <div className="flex items-center justify-between gap-2 mt-4">
+          <div>
+            <Image 
+              onClick={() => router.push('/')}
+              className="md:block cursor-pointer" 
+              src="/images/logo.png" 
+              height="150" 
+              width="150" 
+              alt="Logo" 
+            />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                <FaFacebookF className="h-6 w-6 text-white" aria-hidden="true" />
+            </div>
+            <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                <FaTwitter className="h-6 w-6 text-white" aria-hidden="true" />
+            </div>
+            <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                <FaInstagram className="h-6 w-6 text-white" aria-hidden="true" />
+            </div>
+            <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                <FaSnapchatGhost className="h-6 w-6 text-white" aria-hidden="true" />
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
