@@ -1,11 +1,15 @@
-
+"use client"
 
 import { FaFacebookF, FaInstagram, FaSnapchatGhost, FaTwitter } from 'react-icons/fa'
 import { HiCalendarDays, HiHandRaised } from 'react-icons/hi2'
 import Logo from './navbar/Logo'
 import Image from 'next/image'
+import { useRouter } from "next/navigation";
 
 export default function NewLetter() {
+  const router = useRouter();
+
+
   return (
     <div className="absolute w-full isolate overflow-hidden bg-gray-900 py-16 mt-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -57,10 +61,11 @@ export default function NewLetter() {
             </div>
           </dl>
         </div>
-        <hr className='mt-4'/>
+        <hr className='mt-9'/>
         <div className="flex items-center justify-between gap-2 mt-4">
           <div>
             <Image 
+              onClick={() => router.push('/')}
               className="md:block cursor-pointer" 
               src="/images/logo.png" 
               height="150" 
