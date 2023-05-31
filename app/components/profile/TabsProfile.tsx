@@ -2,7 +2,6 @@
 "use client"
 
 import * as React from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
@@ -87,11 +86,6 @@ export const TabsProfile: React.FC<UserProps> = ({
                             <Tab label="Entreprises" className='capitalize font-bold text-indigo-500' {...a11yProps(2)} />
                         </Tabs>
                     </AppBar>
-                    <SwipeableViews
-                        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                        index={value}
-                        onChangeIndex={handleChangeIndex}
-                    >
                         <TabPanel value={value} index={0} dir={theme.direction}>
                             <main>
                                 <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-12 border-dashed border-2 rounded-lg items-center gap-y-5">
@@ -137,7 +131,6 @@ export const TabsProfile: React.FC<UserProps> = ({
                                 </div>
                             </main>
                         </TabPanel>
-                    </SwipeableViews>
                 </Box>
             </div>           
         </>

@@ -13,8 +13,6 @@ import { SafeUser } from "@/app/types";
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import PopOverMenu from "./PopOverMenu";
-import { GiNotebook } from "react-icons/gi";
-import FeedBack from "../modals/FeedBack";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -48,9 +46,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
       <div className="flex flex-row items-center gap-3">
         <div>
           <PopOverMenu  />
-        </div>
-        <div className="p-2 hover:bg-neutral-100 rounded-full">
-          <FeedBack />
         </div>
         <div 
         onClick={toggleOpen}

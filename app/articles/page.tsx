@@ -11,8 +11,8 @@ const Articles = () => {
         <>
             <ClientOnly>
                 <Container>
-                    <div className="grid grid-cols-2">
-                        <div className="w-4/12">
+                    <div className="min-h-screen flex flex-row gap-20">
+                        <div className="flex flex-col w-56">
                             <TagsArt />
                         </div>
                         <div className="flex-col flex">

@@ -8,7 +8,7 @@ const HeadArt = () => {
                     title="Récentes publications"
                     subtitle="Tous les articles récemment publiés."
                 />
-                <hr className="py-3"/>
+                <hr className="py-3 mt-1"/>
             </div>
         </>
     );

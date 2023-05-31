@@ -24,7 +24,7 @@ const Search = () => {
       return getByValue(locationValue as string)?.label;
     }
 
-    return 'Country';
+    return 'Enter a keyword or research';
   }, [locationValue, getByValue]);
 
   const durationLabel = useMemo(() => {
