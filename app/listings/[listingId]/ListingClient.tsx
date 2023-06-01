@@ -95,20 +95,20 @@ const ListingClient: React.FC<ListingClientProps> = ({
     loginModal
   ]);
 
-  useEffect(() => {
-    if (dateRange.startDate && dateRange.endDate) {
-      const dayCount = differenceInDays(
-        dateRange.endDate, 
-        dateRange.startDate
-      );
+  // useEffect(() => {
+  //   if (dateRange.startDate && dateRange.endDate) {
+  //     const dayCount = differenceInDays(
+  //       dateRange.endDate, 
+  //       dateRange.startDate
+  //     );
       
-      if (dayCount && listing.price) {
-        setTotalPrice(dayCount * listing.price);
-      } else {
-        setTotalPrice(listing.price);
-      }
-    }
-  }, [dateRange, listing.price]);
+  //     if (dayCount && listing.price) {
+  //       setTotalPrice(dayCount * listing.price);
+  //     } else {
+  //       setTotalPrice(listing.price);
+  //     }
+  //   }
+  // }, [dateRange, listing.price]);
 
   return ( 
     <Container>
@@ -139,11 +139,10 @@ const ListingClient: React.FC<ListingClientProps> = ({
               user={listing.user}
               category={category}
               description={listing.description}
-              roomCount={listing.roomCount}
-              guestCount={listing.guestCount}
-              bathroomCount={listing.bathroomCount}
-              locationValue={listing.locationValue}
-            />
+              locationValue={listing.locationValue} 
+              souscategory={listing.souscategory} 
+              price={listing.price}            
+              />
             <div 
               className="
                 order-first 
@@ -154,13 +153,15 @@ const ListingClient: React.FC<ListingClientProps> = ({
             >
               <ListingReservation
                 price={listing.price}
-                totalPrice={totalPrice}
+                // totalPrice={totalPrice}
                 onChangeDate={(value) => setDateRange(value)}
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
-                disabledDates={disabledDates}
-              />
+                disabledDates={disabledDates} 
+                souscategory={listing.souscategory} 
+                totalPrice={0}              
+                />
             </div>
           </div>
         </div>
