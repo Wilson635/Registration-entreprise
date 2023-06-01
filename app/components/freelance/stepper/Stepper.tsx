@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginBottom: theme.spacing(1),
         },
     }),
-);
+)
 
 function getSteps() {
     return ['Info Personnelles', 'Info Professsionnelles', 'Comptes lies', 'Securites des comptes'];
