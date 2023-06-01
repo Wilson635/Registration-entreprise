@@ -11,7 +11,6 @@ import { FaSlackHash } from "react-icons/fa";
 import ClientOnly from "../ClientOnly";
 import Container from "../Container";
 import Heading from "../Heading";
-import { Timeline } from "@material-ui/icons";
 import { BsCheck2Circle, BsChevronCompactDown } from "react-icons/bs";
 import Accordion from "./Accordeon";
 
