@@ -18,13 +18,13 @@ export default function CheckboxesTags() {
             options={itemsSousCategory}
             disableCloseOnSelect
             getOptionLabel={(option) => option.title}
-            renderOption={(option, { selected }) => (
+            renderOption={(option) => (
                 <React.Fragment>
                     <Checkbox
                         icon={icon}
                         checkedIcon={checkedIcon}
                         style={{ marginRight: 8 }}
-                        checked={selected}
+                        checked={true}
                     />
                     {option.title}
                 </React.Fragment>
