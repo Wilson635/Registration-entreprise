@@ -12,7 +12,7 @@ import getCurrentUser from '@/app/actions/getCurrentUser';
 import { SafeUser } from '@/app/types';
 import { HiNewspaper, HiChatBubbleBottomCenterText, HiAcademicCap } from 'react-icons/hi2';
 import Button from '@mui/material/Button';
-import Add from '@material-ui/icons/Add';
+import Add from '@mui/icons-material/Add';
 import Properties from './properties';
 
 interface TabPanelProps {
