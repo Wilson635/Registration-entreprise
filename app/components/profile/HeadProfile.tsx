@@ -21,9 +21,7 @@ import Avatar from '../Avatar'
 import { SafeUser } from '@/app/types'
 import Container from '../Container'
 import { TabsProfile } from './TabsProfile'
-import { AvatarGroup, Box, Card, Chip, Divider, IconButton, Stack, Typography } from '@mui/material';
-import { LocationOn, Edit } from '@material-ui/icons'
-import { grey } from '@mui/material/colors'
+import { Stack, Typography } from '@mui/material';
 import { HiGlobe } from 'react-icons/hi'
 
 
