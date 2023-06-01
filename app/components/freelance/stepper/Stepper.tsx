@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginBottom: theme.spacing(1),
         },
     }),
-);
+)
 
 function getSteps() {
     return ['Info Personnelles', 'Info Professsionnelles', 'Comptes lies', 'Securites des comptes'];
@@ -47,7 +47,7 @@ function getStepContent(step: number) {
 }
 
 export default function StepperFreelance() {
-    const classes = useStyles();
+    // const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set<number>());
     const steps = getSteps();
@@ -95,7 +95,7 @@ export default function StepperFreelance() {
     };
 
     return (
-        <div className={classes.root}>
+        <div className="w-full">
             <Stepper activeStep={activeStep}>
                 {steps.map((label, index) => {
                     const stepProps: { completed?: boolean } = {};
@@ -111,25 +111,25 @@ export default function StepperFreelance() {
             <div>
                 {activeStep === steps.length ? (
                     <div>
-                        <Typography className={classes.instructions}>
+                        <Typography className="mt-1 mb-1">
                             All steps completed - you&apos;re finished
                         </Typography>
-                        <Button onClick={handleReset} className={classes.button}>
+                        <Button onClick={handleReset} className="mr-1">
                             Reset
                         </Button>
                     </div>
                 ) : (
                     <div>
-                        <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                        <Typography className="mt-1 mb-1">{getStepContent(activeStep)}</Typography>
                         <div>
-                            <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+                            <Button disabled={activeStep === 0} onClick={handleBack} className="mr-1">
                                 Back
                             </Button>
                             <Button
                                 variant="contained"
                                 color="primary"
                                 onClick={handleNext}
-                                className={classes.button}
+                                className="mr-1"
                             >
                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                             </Button>
