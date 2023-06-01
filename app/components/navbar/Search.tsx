@@ -7,7 +7,6 @@ import { differenceInDays } from 'date-fns';
 
 import useSearchModal from '@/app/hooks/useSearchModal';
 import useCountries from '@/app/hooks/useCountries';
-import {} from "@material-ui/core/";
 
 const Search = () => {
   const searchModal = useSearchModal();
