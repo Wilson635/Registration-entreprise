@@ -16,10 +16,6 @@ interface HomeProps {
   searchParams: IListingsParams
 };
 
-export const dynamicParams = true; // true | false,
-
-export const dynamic = 'auto';
-// 'auto' | 'force-dynamic' | 'error' | 'force-static'
 
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
