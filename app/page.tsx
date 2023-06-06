@@ -7,10 +7,15 @@ import getListings, {
 } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
+import NewLetter from "./components/Newletter";
+import Heading from "./components/Heading";
+import { FaSlackHash } from "react-icons/fa";
+import ServicesCard from "./components/ServicesCard";
 
 interface HomeProps {
   searchParams: IListingsParams
 };
+
 
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
@@ -27,9 +32,16 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <ClientOnly>
       <Container>
+        <div className="flex gap-3 mt-28">
+          <FaSlackHash className="text-indigo-500 text-3xl"/>
+          <Heading
+            title="Entreprises"
+            subtitle="Listes des entreprises!"
+          />
+        </div>
         <div 
           className="
-            pt-24
+            pt-16
             grid 
             grid-cols-1 
             sm:grid-cols-2 
@@ -48,9 +60,36 @@ const Home = async ({ searchParams }: HomeProps) => {
             />
           ))}
         </div>
+        <div className="flex gap-3 mt-28">
+          <FaSlackHash className="text-indigo-500 text-3xl"/>
+          <Heading
+            title="Services Populaires"
+            subtitle={""}
+          />
+        </div>
+        <div 
+          className="
+            pt-16
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4
+            xl:grid-cols-5
+            2xl:grid-cols-6
+            gap-8
+          "
+        >
+          <ServicesCard />
+        </div>
       </Container>
+      <NewLetter />
     </ClientOnly>
   )
 }
 
 export default Home;
+
+
+export const dynamic = 'force-dynamic';
+// 'auto' | 'force-dynamic' | 'error' | 'force-static'
