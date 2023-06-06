@@ -1,9 +1,7 @@
 "use client"
 
-
-
-import React from 'react';
-import { makeStyles, Theme, createStyles } from '@mui/material/styles';
+import * as React from 'react';
+import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
@@ -12,24 +10,7 @@ import Typography from '@mui/material/Typography';
 import FormStepper from './personal/form';
 import FormStepperPro from './professional/form';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: '100%',
-        },
-        button: {
-            marginRight: theme.spacing(1),
-        },
-        instructions: {
-            marginTop: theme.spacing(1),
-            marginBottom: theme.spacing(1),
-        },
-    }),
-)
-
-function getSteps() {
-    return ['Info Personnelles', 'Info Professsionnelles', 'Comptes lies', 'Securites des comptes'];
-}
+const steps = ['Info Personnelles', 'Info Professionnelles', 'Comptes lies', 'Securites des comptes'];
 
 function getStepContent(step: number) {
     switch (step) {
@@ -46,11 +27,9 @@ function getStepContent(step: number) {
     }
 }
 
-export default function StepperFreelance() {
-    // const classes = useStyles();
+export default function HorizontalLinearStepper() {
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set<number>());
-    const steps = getSteps();
 
     const isStepOptional = (step: number) => {
         return step === 1;
@@ -95,12 +74,13 @@ export default function StepperFreelance() {
     };
 
     return (
-        <div className="w-full">
+        <Box sx={{ width: '100%' }}>
             <Stepper activeStep={activeStep}>
                 {steps.map((label, index) => {
                     const stepProps: { completed?: boolean } = {};
-                    const labelProps: { optional?: React.ReactNode } = {};
-                    
+                    const labelProps: {
+                        optional?: React.ReactNode;
+                    } = {};
                     return (
                         <Step key={label} {...stepProps}>
                             <StepLabel {...labelProps}>{label}</StepLabel>
@@ -108,35 +88,34 @@ export default function StepperFreelance() {
                     );
                 })}
             </Stepper>
-            <div>
-                {activeStep === steps.length ? (
-                    <div>
-                        <Typography className="mt-1 mb-1">
-                            All steps completed - you&apos;re finished
-                        </Typography>
-                        <Button onClick={handleReset} className="mr-1">
-                            Reset
+            {activeStep === steps.length ? (
+                <React.Fragment>
+                    <Typography sx={{ mt: 2, mb: 1 }}>
+                        All steps completed - you&apos;re finished
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                        <Box sx={{ flex: '1 1 auto' }} />
+                        <Button onClick={handleReset}>Reset</Button>
+                    </Box>
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    <Typography sx={{ mt: 2, mb: 1 }}>{getStepContent(activeStep)}</Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                        <Button
+                            color="inherit"
+                            disabled={activeStep === 0}
+                            onClick={handleBack}
+                            sx={{ mr: 1 }}
+                        >
+                            Back
                         </Button>
-                    </div>
-                ) : (
-                    <div>
-                        <Typography className="mt-1 mb-1">{getStepContent(activeStep)}</Typography>
-                        <div>
-                            <Button disabled={activeStep === 0} onClick={handleBack} className="mr-1">
-                                Back
-                            </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={handleNext}
-                                className="mr-1"
-                            >
-                                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                            </Button>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
+                        <Button onClick={handleNext}>
+                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                        </Button>
+                    </Box>
+                </React.Fragment>
+            )}
+        </Box>
     );
 }

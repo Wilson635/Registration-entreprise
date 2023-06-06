@@ -10,8 +10,6 @@ export interface IListingsParams {
   price?: string;
 }
 
-export const dynamic = 'auto';
-// 'auto' | 'force-dynamic' | 'error' | 'force-static'
 
 export default async function getListings(
   params: IListingsParams

@@ -11,7 +11,7 @@ export default function NewLetter() {
 
 
   return (
-    <div className="absolute w-full isolate overflow-hidden bg-gray-900 py-16 mt-16 lg:py-20">
+    <div className="absolute w-full isolate overflow-hidden bg-gray-900 py-4 pt-16 lg-pt-20 mt-16 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">

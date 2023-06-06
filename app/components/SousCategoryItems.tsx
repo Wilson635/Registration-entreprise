@@ -1,6 +1,4 @@
-/* eslint-disable no-use-before-define */
-
-import React from 'react';
+import * as React from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -18,29 +16,26 @@ export default function CheckboxesTags() {
             options={itemsSousCategory}
             disableCloseOnSelect
             getOptionLabel={(option) => option.title}
-            renderOption={(option) => (
-                <React.Fragment>
+            renderOption={(props, option, { selected }) => (
+                <li {...props}>
                     <Checkbox
                         icon={icon}
                         checkedIcon={checkedIcon}
                         style={{ marginRight: 8 }}
-                        checked={true}
+                        checked={selected}
                     />
                     {option.title}
-                </React.Fragment>
+                </li>
             )}
             style={{ width: 500 }}
             renderInput={(params) => (
-                <TextField {...params} variant="outlined" label="Checkboxes" placeholder="Favorites" />
+                <TextField {...params} label="Checkboxes" placeholder="Favorites" />
             )}
         />
     );
 }
 
-
-
-
-
+// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 
 export const itemsSousCategory = [
     { title: 'Agriculture' },

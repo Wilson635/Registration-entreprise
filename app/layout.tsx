@@ -17,8 +17,6 @@ export const metadata = {
   description: 'Annuary of Entreprise',
 }
 
-export const dynamic = 'auto';
-// 'auto' | 'force-dynamic' | 'error' | 'force-static'
 
 const font = Nunito({ 
   subsets: ['latin'], 
