@@ -36,14 +36,6 @@ const ListingReservation: React.FC<
         overflow-hidden
       "
     >
-      <div className="flex flex-row items-center gap-1 p-4">
-        <div className="text-2xl font-semibold">
-          {price}
-        </div>
-        <div className="text-2xl font-semibold">
-          {souscategory}
-        </div>
-      </div>
       <hr />
       <h1 className="mb-3 text-2xl font-bold text-slate-700 py-5 sm:text-3xl capitalize">Get in touch with us</h1>
       <div className="w-full relative mb-3">
