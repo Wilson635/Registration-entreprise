@@ -23,7 +23,7 @@ const Search = () => {
       return getByValue(locationValue as string)?.label;
     }
 
-    return 'Enter a keyword or research';
+    return 'Recherche...';
   }, [locationValue, getByValue]);
 
   const durationLabel = useMemo(() => {
@@ -79,6 +79,7 @@ const Search = () => {
             text-sm 
             font-semibold 
             px-6
+            sm:text-xs
           "
         >
           {locationLabel}
