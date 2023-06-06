@@ -1,6 +1,7 @@
 # Full Stack business directory with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
 
-
+![Copy of Fullstack Twitter Clone (8)](https://vercel.com/9ea75b50-c59b-4d30-832a-f2851b42dae6)
+blob:https://vercel.com/9ea75b50-c59b-4d30-832a-f2851b42dae6
 
 
 This is a repository for a Full Stack business directory with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth.
