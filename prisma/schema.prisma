@@ -42,7 +42,7 @@ model User {
   listings Listing[]
   reservations Reservation[]
   posts     Post[]
-    profile   Profile?
+  profile   Profile?
 }
 
 model Post {

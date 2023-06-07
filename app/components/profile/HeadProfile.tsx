@@ -2,7 +2,7 @@
 "use client"
 
 
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import {
     HiBriefcase,
     HiCalendar,
@@ -25,6 +25,8 @@ import Container from '../Container'
 import { TabsProfile } from './TabsProfile'
 import { Stack, Typography } from '@mui/material';
 import { HiGlobe } from 'react-icons/hi'
+import { useSearchParams } from 'next/navigation'
+import { differenceInDays } from 'date-fns'
 
 
 interface ProfileProps {
@@ -35,7 +37,22 @@ export const HeadProfile: React.FC<ProfileProps> = ({
     currentUser
 }) => {
 
+    const params = useSearchParams();
+    const startDate = params?.get('createdAt');
 
+    const durationLabel = useMemo(() => {
+        if (startDate) {
+            const now = new Date();
+            const start = new Date(startDate as string);
+            let diff = differenceInDays(now, start);
+    
+            if (diff === 0) {
+                diff = 1;
+            }
+    
+            return `${diff} Days`;
+        }
+    }, [startDate]);
 
     return (
         <>
@@ -52,7 +69,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                     <div className="min-w-0 flex-1">
                         <div className='flex items-center justify-between gap-2'>
                             <div className='p-2 flex gap-4'>
-                                <div 
+                                <div
                                     className="
                                     p-2
                                     border-[1px] 
@@ -71,7 +88,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                                 <Stack spacing={0.2}>
                                     <Typography fontWeight={700}>{currentUser?.name}</Typography>
                                     <Typography fontWeight={200}>{currentUser?.email}</Typography>
-                                    
+
                                 </Stack>
                             </div>
                             <div>
@@ -93,7 +110,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                             </div>
                             <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiCalendar className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                Inscrit le {currentUser?.createdAt}
+                                Inscrit le {durationLabel}
                             </div>
                         </div>
                         <div className="px-9 py-5 mt-1 flex flex-col sm:mt-0 sm:flex-row items-center justify-between  sm:flex-wrap sm:space-x-6">
@@ -122,7 +139,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                     </div>
                 </div>
                 <div className="items-center flex">
-                    <TabsProfile currentUser={currentUser}/>
+                    <TabsProfile currentUser={currentUser} />
                 </div>
             </Container>
         </>
