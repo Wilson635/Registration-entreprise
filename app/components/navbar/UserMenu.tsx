@@ -115,6 +115,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   label="Add your entreprise" 
                   onClick={rentModal.onOpen}
                 />
+                <MenuItem 
+                  label="Parametres" 
+                  onClick={() => router.push('/setting/profile')}
+                />
                 <hr />
                 <MenuItem 
                   label="Logout" 
