@@ -1,5 +1,4 @@
-import ClientOnly from "../components/ClientOnly";
-import Container from "../components/Container";
+
 import Sidebar from "../components/profile/Sidebar";
 
 const ContentSider = ({ children }) => {
@@ -8,7 +7,7 @@ const ContentSider = ({ children }) => {
             <div className="body">
                 <div className="layout">
                     <Sidebar />
-                    <main className="layout__main-content">{children}</main>;
+                    <main className="layout__main-content">{children}</main>
                 </div>
             </div>
         </>
