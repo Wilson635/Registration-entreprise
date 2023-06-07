@@ -57,7 +57,7 @@ const Sidebar = () => {
                         return (
                             <li className="sidebar__item" key={name}>
                                 <Link
-                                    className={`sidebar__link ${router.pathname === href ? "sidebar__link--active" : ""
+                                    className={`sidebar__link ${router.replace === href ? "sidebar__link--active" : ""
                                         }`}
                                     href={href}
                                 >
