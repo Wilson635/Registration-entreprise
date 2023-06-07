@@ -23,5 +23,10 @@ export async function POST(
     }
   });
 
+  const exist = await prisma.user.count({ where: { email: user.email } });
+  if (exist) {
+    return NextResponse.json({ error: `User already exists with that email` }, { status: 400 })
+  };
+
   return NextResponse.json(user);
 }
