@@ -6,14 +6,10 @@ const ContentSider = ({ children }) => {
     return (
         <>
             <div className="body">
-                <ClientOnly>
-                    <Container>
-                        <div className="layout">
-                            <Sidebar />
-                            <main className="layout__main-content">{children}</main>;
-                        </div>
-                    </Container>
-                </ClientOnly>
+                <div className="layout">
+                    <Sidebar />
+                    <main className="layout__main-content">{children}</main>;
+                </div>
             </div>
         </>
     );
