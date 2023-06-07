@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
-import { HiOutlineUser, HiOutlineLockClosed, HiOutlineRectangleGroup, HiOutlineMegaphone, HiOutlineCog } from "react-icons/hi2";
+import { HiOutlineUser, HiOutlineLockClosed, HiOutlineRectangleGroup, HiOutlineMegaphone, HiOutlineCog8Tooth } from "react-icons/hi2";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { SidebarContext } from "@/app/context/SidebarContext";
 
@@ -49,8 +49,8 @@ const Sidebar = () => {
                         src="/logo.jpg"
                         alt="logo"
                     /> */}
-                    <HiOutlineCog className="sidebar__logo" size={80} />
-                    <p className="sidebar__logo-name">P</p>
+                    <HiOutlineCog8Tooth className="sidebar__logo" size={80} />
+                    <p className="sidebar__logo-name">Paramètres</p>
                 </div>
                 <ul className="sidebar__list">
                     {sidebarItems.map(({ name, href, icon: Icon }) => {
