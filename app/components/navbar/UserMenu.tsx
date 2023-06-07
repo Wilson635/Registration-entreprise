@@ -44,7 +44,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   return ( 
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
-        <div className="hidden">
+        <div className="lg:block">
           <PopOverMenu  />
         </div>
         <div 

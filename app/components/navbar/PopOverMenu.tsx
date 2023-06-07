@@ -81,9 +81,9 @@ const PopOverMenu: React.FC<PopOverMenuProps> = ({
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute left-1/2 z-50 mt-5 flex w-screen sm:mx-auto max-sm:-left-28 max-md:-left-28 -translate-x-1/2 px-4 lg:max-w-3xl backdrop:blur-md">
-                <div className="overflow-hidden rounded-br-lg rounded-bl-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                    <div className="grid gap-8 bg-white p-8 lg:grid-cols-2 backdrop:blur-md opacity-100">
+              <Popover.Panel className="absolute left-1/2 z-50 mt-5 flex w-[90vw] sm:mx-auto max-sm:-left-28 max-md:-left-28 -translate-x-1/2 px-4 lg:max-w-3xl backdrop:blur-md">
+                <div className="relative overflow-hidden rounded-br-lg rounded-bl-lg shadow-lg mr-52 ring-1 ring-black ring-opacity-5">
+                    <div className="grid gap-8 bg-white p-8 lg:grid-cols-1 backdrop:blur-md opacity-100">
                         {menu.map((item) => (
                             <a
                                 key={item.name}
