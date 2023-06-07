@@ -9,6 +9,7 @@ import {
     HiCheck,
     HiChevronDown,
     HiCurrencyDollar,
+    HiGlobeAlt,
     HiInbox,
     HiInformationCircle,
     HiLink,
@@ -105,7 +106,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                             </div>
                             <div className="mt-2 flex flex-col items-center text-sm text-gray-500">
                                 <div className="flex">
-                                    <HiGlobe className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    <HiGlobeAlt className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
                                     Site internet
                                 </div>
                                 <span className='py-4'> .... </span>
