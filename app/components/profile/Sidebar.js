@@ -11,7 +11,7 @@ import { SidebarContext } from "@/app/context/SidebarContext";
 const sidebarItems = [
     {
         name: "Mon Profile",
-        href: "/setting",
+        href: "/setting/profile",
         icon: HiOutlineUser,
     },
     {
