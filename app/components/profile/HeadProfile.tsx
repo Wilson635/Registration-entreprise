@@ -24,9 +24,7 @@ import { SafeUser } from '@/app/types'
 import Container from '../Container'
 import { TabsProfile } from './TabsProfile'
 import { Stack, Typography } from '@mui/material';
-import { HiGlobe } from 'react-icons/hi'
-import { useSearchParams } from 'next/navigation'
-import { differenceInDays } from 'date-fns'
+import Link from 'next/link'
 
 
 interface ProfileProps {
@@ -36,23 +34,6 @@ interface ProfileProps {
 export const HeadProfile: React.FC<ProfileProps> = ({
     currentUser
 }) => {
-
-    const params = useSearchParams();
-    const startDate = params?.get('createdAt');
-
-    const durationLabel = useMemo(() => {
-        if (startDate) {
-            const now = new Date();
-            const start = new Date(startDate as string);
-            let diff = differenceInDays(now, start);
-    
-            if (diff === 0) {
-                diff = 1;
-            }
-    
-            return `${diff} Days`;
-        }
-    }, [startDate]);
 
     return (
         <>
@@ -92,7 +73,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                                 </Stack>
                             </div>
                             <div>
-                                <span className="block sm:block">
+                                <Link href={'/setting'} className="block sm:block">
                                     <button
                                         type="button"
                                         className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -100,7 +81,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                                         <HiPencil className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" aria-hidden="true" />
                                         Edit
                                     </button>
-                                </span>
+                                </Link>
                             </div>
                         </div>
                         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
@@ -110,7 +91,7 @@ export const HeadProfile: React.FC<ProfileProps> = ({
                             </div>
                             <div className="mt-2 flex items-center text-sm text-gray-500">
                                 <HiCalendar className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                Inscrit le {durationLabel}
+                                Inscrit le {currentUser?.createdAt}
                             </div>
                         </div>
                         <div className="px-9 py-5 mt-1 flex flex-col sm:mt-0 sm:flex-row items-center justify-between  sm:flex-wrap sm:space-x-6">
