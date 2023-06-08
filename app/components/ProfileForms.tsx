@@ -1,5 +1,4 @@
 import { HiOutlinePhoto, HiPhoto } from "react-icons/hi2";
-import ImageUpload from "./inputs/ImageUpload";
 import Heading from "./Heading";
 
 const ProfileForms = () => {
