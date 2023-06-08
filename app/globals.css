@@ -26,9 +26,9 @@ body,
 
 .layout {
   display: flex;
-  height: 100vh;
+  height: 100%;
   position: relative;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .layout__main-content {
@@ -49,7 +49,6 @@ body,
 }
 
 .sidebar__top {
-  width: max-content;
   display: flex;
   align-items: center;
   gap: 1rem;
