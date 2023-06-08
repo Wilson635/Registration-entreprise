@@ -19,7 +19,7 @@ const page = () => {
                     <div className="flex gap-2 px-4 bg-transparent  w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 f sm:text-sm text-base sm:leading-6">
                         <HiOutlineInformationCircle className="text-indigo-500" size={42} />
                         <p>
-                            <span className="text-indigo-500">Astuce:</span>  Visitez n'importe quel fil de discussion du forum et cliquez sur le bouton <strong>"S'abonner" </strong>dans la barre latérale. Une fois 
+                            <span className="text-indigo-500 text-lg">Astuce:</span>  Visitez n'importe quel fil de discussion du forum et cliquez sur le bouton <strong>"S'abonner" </strong>dans la barre latérale. Une fois 
                             cliqué, vous recevrez un e-mail chaque fois qu'une réponse sera publiée. Il en va de même pour n'importe quel type de contenu qui offre cette possibilité. 
                         </p>
                     </div>
